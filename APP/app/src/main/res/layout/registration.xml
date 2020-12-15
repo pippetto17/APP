@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/textName"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="605dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textSurname"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginBottom="531dp"
+        android:ems="10"
+        android:hint="Cognome"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textPhone"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginBottom="457dp"
+        android:ems="10"
+        android:hint="Telefono"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textUser"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginBottom="383dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="423dp">
+
+        <EditText
+            android:id="@+id/textPass"
+            android:layout_width="201dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:ems="5"
+            android:hint="Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/textConfirmPass"
+        android:layout_width="201dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:ems="5"
+        android:hint="Conferma Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/reg_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <Button
+        android:id="@+id/reg_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="549dp"
+        android:layout_marginBottom="134dp"
+        android:text="Registrati"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
