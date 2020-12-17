@@ -14,7 +14,6 @@ public class registration extends AppCompatActivity {
     private TextView textPass;
     private TextView textConfirmPass;
     private Button reg_back;
-    private textview oh;
 
 
 
@@ -28,10 +27,7 @@ public class registration extends AppCompatActivity {
         textUser = findViewById(R.id.textUser);
         textPass = findViewById(R.id.textPass);
         textConfirmPass = findViewById(R.id.textConfirmPass);
-        reg_back = findViewById(R.id.reg_back);
-
-
-
+        reg_back = findViewById(R.id.cardViewButton);
     }
 }
 
