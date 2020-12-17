@@ -14,6 +14,7 @@ public class registration extends AppCompatActivity {
     private TextView textPass;
     private TextView textConfirmPass;
     private Button reg_back;
+    private textview oh;
 
 
 
