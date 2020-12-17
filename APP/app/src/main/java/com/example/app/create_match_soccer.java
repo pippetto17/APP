@@ -15,9 +15,6 @@ public class create_match_soccer extends AppCompatActivity {
     private TextView textConfirmPass;
     private Button reg_back;
 
-
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
@@ -27,10 +24,7 @@ public class create_match_soccer extends AppCompatActivity {
         textUser = findViewById(R.id.textUser);
         textPass = findViewById(R.id.textPass);
         textConfirmPass = findViewById(R.id.textConfirmPass);
-        reg_back = findViewById(R.id.reg_back);
-
-
-
+        //reg_back = findViewById(R.id.cardView);
     }
 }
 

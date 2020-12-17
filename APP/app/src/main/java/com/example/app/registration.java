@@ -15,9 +15,6 @@ public class registration extends AppCompatActivity {
     private TextView textConfirmPass;
     private Button reg_back;
 
-
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
