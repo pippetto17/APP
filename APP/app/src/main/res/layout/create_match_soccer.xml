@@ -15,17 +15,32 @@
         android:layout_height="match_parent"
         android:padding="40dp">
 
-        <Button
+        <androidx.cardview.widget.CardView
             android:id="@+id/show_dialog"
-            android:layout_width="98dp"
-            android:layout_height="49dp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:layout_marginTop="16dp"
-            android:text="DATA"
             android:textSize="14sp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/show_dialogT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Seleziona Data"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/date_text"
@@ -37,6 +52,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/show_dialog" />
+
         <TextView
             android:id="@+id/timeTextView2"
             android:layout_width="wrap_content"
@@ -48,28 +64,165 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_text" />
 
-        <CheckBox
-            android:id="@+id/morning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mattina"
-            tools:layout_editor_absoluteX="59dp"
-            tools:layout_editor_absoluteY="208dp" />
+        <TableRow
+            android:id="@+id/table"
+            android:layout_width="414dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextView2">
 
-        <CheckBox
-            android:id="@+id/afternoon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteX="205dp"
-            tools:layout_editor_absoluteY="242dp" />
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp" />
 
-        <CheckBox
-            android:id="@+id/evening"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="-65dp"
+                android:layout_marginTop="30dp"
+                android:text="MATTINA"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="-78dp"
+                android:layout_marginTop="30dp"
+                android:text="POMERIGGIO"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="-50dp"
+                android:layout_marginTop="30dp"
+                android:text="SERA"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </TableRow>
+
+        <TextView
+            android:id="@+id/modeTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CheckBox"
-            tools:layout_editor_absoluteY="249dp" />
+            android:layout_marginTop="20dp"
+            android:text="Modalità di gioco:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table" />
+
+        <SeekBar
+            android:id="@+id/playersSeekBar2"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="141dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="20dp"
+            android:max="1"
+            android:progress="3"
+            android:progressTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/modeTextView2" />
+
+        <TextView
+            android:id="@+id/singleTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginBottom="1dp"
+            android:text="5"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/playersSeekBar2"
+            app:layout_constraintStart_toStartOf="@+id/playersSeekBar2" />
+
+        <TextView
+            android:id="@+id/doubleTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            android:text="8"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/playersSeekBar2"
+            app:layout_constraintEnd_toEndOf="@+id/playersSeekBar2"
+            app:layout_constraintTop_toTopOf="@+id/singleTextView2" />
+
+        <EditText
+            android:id="@+id/zonePlainText3"
+            android:layout_width="171dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:gravity="center|center_vertical"
+            android:hint="Zona"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playersSeekBar2"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress3"
+            android:layout_width="171dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Mail"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zonePlainText3" />
+
+        <EditText
+            android:id="@+id/editTextPhone3"
+            android:layout_width="171dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="INFO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone3" />
+
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="wrap_content"
@@ -90,111 +243,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
-        <TextView
-            android:id="@+id/doubleTextView2"
-            android:layout_width="9dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="48dp"
-            android:text="8"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/playersSeekBar2"
-            app:layout_constraintHorizontal_bias="0.954"
-            app:layout_constraintStart_toStartOf="@+id/playersSeekBar2"
-            app:layout_constraintTop_toTopOf="@+id/playersSeekBar2" />
-
-        <EditText
-            android:id="@+id/zonePlainText3"
-            android:layout_width="171dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="56dp"
-            android:ems="10"
-            android:gravity="center|center_vertical"
-            android:hint="Zona"
-            android:inputType="textPersonName"
-            android:textColor="#000000"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playersSeekBar2"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/singleTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="5"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/playersSeekBar2"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="@+id/playersSeekBar2"
-            app:layout_constraintTop_toTopOf="@+id/playersSeekBar2" />
-
-        <SeekBar
-            android:id="@+id/playersSeekBar2"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="141dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="20dp"
-            android:max="1"
-            android:progress="3"
-            android:progressTint="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modeTextView2" />
-
-        <EditText
-            android:id="@+id/editTextPhone3"
-            android:layout_width="171dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Telefono"
-            android:inputType="phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
-
-        <TextView
-            android:id="@+id/modeTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Modalità di gioco:"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="304dp" />
-
-        <EditText
-            android:id="@+id/editTextTextEmailAddress3"
-            android:layout_width="171dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Mail"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zonePlainText3" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="INFO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
 </ScrollView>
