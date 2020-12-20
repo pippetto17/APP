@@ -3,16 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="635dp"
-        android:layout_height="756dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sfondo_chiaro" />
+    android:layout_height="match_parent"
+    android:background="@drawable/light_wallpaper">
 
     <EditText
         android:id="@+id/textName"
@@ -24,13 +16,12 @@
         android:drawableLeft="@drawable/user_image"
         android:ems="10"
         android:hint=" Nome"
-
         android:inputType="textPersonName"
         android:paddingStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/textSurname"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -45,9 +36,9 @@
         android:inputType="phone"
         android:paddingStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/textUser"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/textUser"
@@ -60,17 +51,16 @@
         android:hint=" Email"
         android:inputType="textEmailAddress"
         android:paddingStart="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/textSurname"
         android:layout_width="201dp"
         android:layout_height="42dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="20dp"
         android:background="#3B000000"
         android:drawableLeft="@drawable/user_image"
         android:ems="10"
@@ -78,10 +68,9 @@
         android:inputType="textPersonName"
         android:paddingStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/textPhone"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"

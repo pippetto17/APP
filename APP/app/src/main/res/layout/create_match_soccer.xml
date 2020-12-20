@@ -4,16 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/timeSeekBar"
-    android:autoSizeTextType="uniform"
-    android:autoSizeMinTextSize="12sp"
-    android:autoSizeMaxTextSize="100sp"
-    android:autoSizeStepGranularity="2sp"
-    android:background="@drawable/sfondo_chiaro">
+    android:background="@drawable/light_wallpaper">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="40dp">
 
         <androidx.cardview.widget.CardView
@@ -58,7 +53,7 @@
             app:layout_constraintTop_toBottomOf="@+id/show_dialog" />
 
         <TextView
-            android:id="@+id/timeTextView2"
+            android:id="@+id/time_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -69,28 +64,27 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_text" />
-
         <TableRow
-            android:id="@+id/table"
+            android:id="@+id/table_time"
             android:layout_width="414dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timeTextView2">
+            app:layout_constraintTop_toBottomOf="@+id/time_text">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/checkBox_morning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="70dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/morning"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="-65dp"
+                android:layout_marginStart="-65dp"
                 android:layout_marginTop="30dp"
                 android:text="MATTINA"
                 android:textColor="#000000"
@@ -98,16 +92,16 @@
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/checkBox_afteroon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="70dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/afternoon"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="-78dp"
+                android:layout_marginStart="-78dp"
                 android:layout_marginTop="30dp"
                 android:text="POMERIGGIO"
                 android:textColor="#000000"
@@ -115,25 +109,24 @@
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/checkBox_evening"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/evening"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="-50dp"
+                android:layout_marginStart="-50dp"
                 android:layout_marginTop="30dp"
                 android:text="SERA"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </TableRow>
-
         <TextView
-            android:id="@+id/modeTextView2"
+            android:id="@+id/mod_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -143,29 +136,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table" />
+            app:layout_constraintTop_toBottomOf="@+id/table_time" />
 
         <TableRow
-            android:id="@+id/table2"
+            android:id="@+id/table_mod"
             android:layout_width="414dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modeTextView2">
+            app:layout_constraintTop_toBottomOf="@+id/mod_text">
 
             <CheckBox
-                android:id="@+id/checkBox_"
+                android:id="@+id/checkBox_fiveP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="140dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/textView2_"
+                android:id="@+id/fiveP"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="-38dp"
+                android:layout_marginStart="-38dp"
                 android:layout_marginTop="30dp"
                 android:text="5"
                 android:textColor="#000000"
@@ -173,25 +166,24 @@
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox3_"
+                android:id="@+id/checkBox_eightP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/textView4_"
+                android:id="@+id/eightP"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="-35dp"
+                android:layout_marginStart="-35dp"
                 android:layout_marginTop="30dp"
                 android:text="8"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </TableRow>
-
         <EditText
-            android:id="@+id/zonePlainText3"
+            android:id="@+id/zone"
             android:layout_width="171dp"
             android:layout_height="46dp"
             android:layout_marginTop="26dp"
@@ -204,41 +196,41 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table2"
+            app:layout_constraintTop_toBottomOf="@+id/table_mod"
             tools:visibility="visible" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress3"
+            android:id="@+id/email_ad"
             android:layout_width="171dp"
             android:layout_height="46dp"
             android:layout_marginTop="24dp"
             android:background="#3B000000"
-            android:drawableLeft="@drawable/email_image"
+            android:drawableStart="@drawable/email_image"
             android:ems="10"
             android:hint=" Email"
             android:inputType="textEmailAddress"
             android:paddingStart="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zonePlainText3" />
+            app:layout_constraintTop_toBottomOf="@+id/zone" />
 
         <EditText
-            android:id="@+id/editTextPhone3"
+            android:id="@+id/phone_ad"
             android:layout_width="171dp"
             android:layout_height="45dp"
             android:layout_marginTop="24dp"
             android:background="#3B000000"
-            android:drawableLeft="@drawable/phone_image"
+            android:drawableStart="@drawable/phone_image"
             android:ems="10"
             android:hint=" Telefono"
             android:inputType="phone"
             android:paddingStart="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+            app:layout_constraintTop_toBottomOf="@+id/email_ad" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/infos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -247,10 +239,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhone3" />
+            app:layout_constraintTop_toBottomOf="@+id/phone_ad" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/info_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -261,16 +253,16 @@
             android:inputType="textMultiLine"
             android:lines="5"
             android:paddingStart="5dp"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/infos"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/createAd"
+            android:id="@+id/create_ad"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="40dp"
@@ -280,14 +272,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+            app:layout_constraintTop_toBottomOf="@+id/info_box">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/createAdT"
+                    android:id="@+id/create_adT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -295,6 +287,5 @@
                     android:textColor="@color/white" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
