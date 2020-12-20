@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_match_tennis);
+        setContentView(R.layout.create_match_soccer);
         dateText = findViewById(R.id.date_text);
 
         findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {

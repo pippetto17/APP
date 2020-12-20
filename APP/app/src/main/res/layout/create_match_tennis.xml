@@ -8,7 +8,8 @@
     android:autoSizeTextType="uniform"
     android:autoSizeMinTextSize="12sp"
     android:autoSizeMaxTextSize="100sp"
-    android:autoSizeStepGranularity="2sp">
+    android:autoSizeStepGranularity="2sp"
+    android:background="@drawable/sfondo_chiaro">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/show_dialog"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:textSize="14sp"
@@ -48,20 +49,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Data"
+            android:textColor="@color/black"
+            android:textColorHint="#424242"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/show_dialog" />
+
         <TextView
             android:id="@+id/timeTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Fascia oraria:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_text" />
+
         <TableRow
             android:id="@+id/table"
             android:layout_width="414dp"
@@ -76,7 +84,8 @@
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp" />
+                android:layout_marginStart="70dp"
+                android:buttonTint="#000000" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -86,13 +95,14 @@
                 android:text="MATTINA"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp" />
+                android:layout_marginStart="70dp"
+                android:buttonTint="#000000" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -102,13 +112,14 @@
                 android:text="POMERIGGIO"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp" />
+                android:layout_marginStart="60dp"
+                android:buttonTint="#000000" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -118,115 +129,139 @@
                 android:text="SERA"
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </TableRow>
+
         <TextView
             android:id="@+id/modeTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Modalità di gioco:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/table" />
-        <SeekBar
-            android:id="@+id/playersSeekBar2"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="141dp"
-            android:layout_height="68dp"
+
+        <TableRow
+            android:id="@+id/table2"
+            android:layout_width="414dp"
+            android:layout_height="100dp"
             android:layout_marginTop="20dp"
-            android:max="1"
-            android:progress="3"
-            android:progressTint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modeTextView2" />
-        <TextView
-            android:id="@+id/singleTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="96dp"
-            android:text="singolo"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/playersSeekBar2"
-            app:layout_constraintTop_toTopOf="@+id/playersSeekBar2" />
-        <TextView
-            android:id="@+id/doubleTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="48dp"
-            android:text="doppio"
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/playersSeekBar2"
-            app:layout_constraintTop_toTopOf="@+id/playersSeekBar2" />
+            app:layout_constraintTop_toBottomOf="@+id/modeTextView2">
+
+            <CheckBox
+                android:id="@+id/checkBox_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:id="@+id/textView2_"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="-64dp"
+                android:layout_marginTop="30dp"
+                android:text="SINGOLO"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBox3_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:buttonTint="#000000" />
+
+            <TextView
+                android:id="@+id/textView4_"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="-57dp"
+                android:layout_marginTop="30dp"
+                android:text="DOPPIO"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
 
         <EditText
             android:id="@+id/zonePlainText3"
             android:layout_width="171dp"
             android:layout_height="46dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="26dp"
+            android:background="#3B000000"
             android:ems="10"
-            android:gravity="center|center_vertical"
             android:hint="Zona"
             android:inputType="textPersonName"
+            android:paddingStart="5dp"
             android:textColor="#000000"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playersSeekBar2"
+            app:layout_constraintTop_toBottomOf="@+id/table2"
             tools:visibility="visible" />
+
         <EditText
             android:id="@+id/editTextTextEmailAddress3"
             android:layout_width="171dp"
             android:layout_height="46dp"
             android:layout_marginTop="24dp"
+            android:background="#3B000000"
+            android:drawableLeft="@drawable/email_image"
             android:ems="10"
-            android:hint="Mail"
+            android:hint=" Email"
             android:inputType="textEmailAddress"
+            android:paddingStart="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/zonePlainText3" />
+
         <EditText
             android:id="@+id/editTextPhone3"
             android:layout_width="171dp"
             android:layout_height="45dp"
             android:layout_marginTop="24dp"
+            android:background="#3B000000"
+            android:drawableLeft="@drawable/phone_image"
             android:ems="10"
-            android:hint="Telefono"
+            android:hint=" Telefono"
             android:inputType="phone"
+            android:paddingStart="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="INFO"
+            android:text="INFORMAZIONI AGGIUNTIVE"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextPhone3" />
+
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="#3B000000"
             android:ems="10"
             android:gravity="top"
-            android:hint="Informazioni"
+            android:hint="..."
             android:inputType="textMultiLine"
-            android:lines="2"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeStepGranularity="2sp"
-            app:autoSizeTextType="uniform"
+            android:lines="5"
+            android:paddingStart="5dp"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -234,5 +269,31 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.0" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/createAd"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:textSize="14sp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/createAdT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Crea Annuncio"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
