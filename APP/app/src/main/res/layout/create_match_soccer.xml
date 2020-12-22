@@ -64,6 +64,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_text" />
+
         <TableRow
             android:id="@+id/table_time"
             android:layout_width="414dp"
@@ -125,6 +126,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </TableRow>
+
         <TextView
             android:id="@+id/mod_text"
             android:layout_width="wrap_content"
@@ -182,6 +184,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </TableRow>
+
         <EditText
             android:id="@+id/zone"
             android:layout_width="171dp"
