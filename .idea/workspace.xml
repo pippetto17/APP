@@ -22,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../aless/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/APP" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="SvnConfiguration">
@@ -39,25 +39,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="568" y="227" key="#Notifications" timestamp="1608648948157">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1608648948157" />
     <state x="92" y="92" width="1182" height="544" key="AVDManager" timestamp="1608198512558">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1608198512558" />
-    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1608198768236">
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1608653375621">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608198768236" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1608199007839">
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608653375621" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1608648784915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1608199007839" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1608648784915" />
     <state x="339" y="164" width="672" height="677" key="run.anything.popup" timestamp="1608198938431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="164" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608198938431" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608198932979">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608636758114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608198932979" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608636758114" />
   </component>
 </project>
