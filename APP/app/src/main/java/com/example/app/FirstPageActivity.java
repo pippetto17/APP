@@ -15,5 +15,6 @@ public class FirstPageActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_page);
+
     }
 }
