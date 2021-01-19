@@ -11,7 +11,7 @@
         android:theme="@style/Theme.APP">
 
         <activity
-            android:name=".FirstPageActivity"
+            android:name=".mainActivity"
             android:label="Sporty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".RegistrationActvity" />
+        <activity android:name=".matchSActivity" />
 
     </application>
 
