@@ -12,48 +12,48 @@
         android:layout_height="130dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="80dp"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="#8F000000"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
 
-            <TextView
-                android:id="@+id/chooseSoccerT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Calcetto"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+            <ImageView
+                android:id="@+id/soccerball"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/soccerball" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/chooseTennis"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="230dp"
         android:layout_marginTop="80dp"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="#8F000000"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <TextView
-                android:id="@+id/chooseTennisT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Tennis"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+            <ImageView
+                android:id="@+id/tennis"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:srcCompat="@drawable/tennis_racket" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -80,30 +80,30 @@
                 android:textColor="@color/white" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/chooseBasket"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="230dp"
         android:layout_marginTop="300dp"
-        app:cardBackgroundColor="@color/black"
+        app:cardBackgroundColor="#8F000000"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/chooseBasketT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:drawableTint="@color/white"
-                android:text="Basket"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/basketball"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/basketball" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
