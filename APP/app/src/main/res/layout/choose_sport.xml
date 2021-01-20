@@ -61,24 +61,24 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="300dp"
-        app:cardBackgroundColor="@color/black"
+        android:layout_marginTop="260dp"
+        app:cardBackgroundColor="#8F000000"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <TextView
-                android:id="@+id/choosePaddleT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Paddle"
-                android:textColor="@color/white" />
-        </RelativeLayout>
+            <ImageView
+                android:id="@+id/paddle"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:srcCompat="@drawable/paddle_racket" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -86,7 +86,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="230dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="260dp"
         app:cardBackgroundColor="#8F000000"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +103,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/basketball" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chooseHockey"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="440dp"
+        app:cardBackgroundColor="#8F000000"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12.5dp">
+
+            <ImageView
+                android:id="@+id/hockeystick"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/hockey" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chooseRugby"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="440dp"
+        app:cardBackgroundColor="#8F000000"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12.5dp">
+
+            <ImageView
+                android:id="@+id/rugby"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:srcCompat="@drawable/rugbyball" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
