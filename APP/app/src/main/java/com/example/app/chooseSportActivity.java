@@ -38,5 +38,6 @@ public class chooseSportActivity extends Fragment {
             }
         });
         return view;
+        
     }
 }
