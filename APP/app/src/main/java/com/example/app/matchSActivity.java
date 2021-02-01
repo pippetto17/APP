@@ -31,24 +31,26 @@ public class matchSActivity extends Fragment implements DatePickerDialog.OnDateS
                 showDatePickerDailog();
             }
         });
-        private void showDatePickerDailog(){
-            DatePickerDialog datePickerDialog = new DatePickerDialog(
+
+        return view;
+    }
+
+
+    private void showDatePickerDailog(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
                 getActivity(),
                 this,
                 Calendar.getInstance().get(Calendar.YEAR),
                 Calendar.getInstance().get(Calendar.MONTH),
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-            );
-            datePickerDialog.show();
-        }
+        );
+        datePickerDialog.show();
+    };
 
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            String date = "Data: " + dayOfMonth + "/" + month + "/" + year;
-            dateText.setText(date);
-        }
-
-        return view;
+    @Override
+    public void onDateSet(DatePicker datePicker, int dayOfMonth, int month, int year) {
+        String date = "Data: " + dayOfMonth + "/" + month + "/" + year;
+        dateText.setText(date);
     }
 }
 
