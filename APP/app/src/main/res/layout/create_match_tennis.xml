@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/light_wallpaper">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -187,50 +186,20 @@
 
         <EditText
             android:id="@+id/zone"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:background="@drawable/box"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
             android:layout_marginTop="26dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/box"
             android:ems="10"
             android:hint="Zona"
             android:inputType="textPersonName"
             android:paddingStart="5dp"
-            android:textColor="#000000"
-            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table_mod"
-            tools:visibility="visible" />
+            app:layout_constraintTop_toBottomOf="@+id/table_mod"/>
 
-        <EditText
-            android:id="@+id/email_ad"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:background="@drawable/box"
-            android:layout_marginTop="24dp"
-            android:drawableStart="@drawable/email_image"
-            android:ems="10"
-            android:hint=" Email"
-            android:inputType="textEmailAddress"
-            android:paddingStart="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zone" />
-
-        <EditText
-            android:id="@+id/phone_ad"
-            android:layout_width="200dp"
-            android:layout_height="45dp"
-            android:background="@drawable/box"
-            android:layout_marginTop="24dp"
-            android:drawableStart="@drawable/phone_image"
-            android:ems="10"
-            android:hint=" Telefono"
-            android:inputType="phone"
-            android:paddingStart="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_ad" />
 
         <TextView
             android:id="@+id/infos"
@@ -242,27 +211,27 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_ad" />
+            app:layout_constraintTop_toBottomOf="@+id/zone" />
 
         <EditText
             android:id="@+id/info_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#3B000000"
+            android:background="@drawable/rounded_corner"
             android:ems="10"
             android:gravity="top"
             android:hint="..."
             android:inputType="textMultiLine"
             android:lines="5"
-            android:paddingStart="5dp"
+            android:padding="10dp"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/infos"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/create_ad"
