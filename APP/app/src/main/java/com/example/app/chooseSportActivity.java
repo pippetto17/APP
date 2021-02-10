@@ -9,9 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-public class chooseSportActivity extends Fragment {
+public class ChooseSportActivity extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class chooseSportActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new matchSActivity());
+                fr.replace(R.id.fragment_container, new MatchSActivity());
                 fr.commit();
             }
         });
@@ -33,7 +32,7 @@ public class chooseSportActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new matchTActivity());
+                fr.replace(R.id.fragment_container, new MatchTActivity());
                 fr.commit();
             }
         });

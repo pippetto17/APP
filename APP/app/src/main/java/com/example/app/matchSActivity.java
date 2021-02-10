@@ -1,21 +1,21 @@
 package com.example.app;
 
 import android.app.DatePickerDialog;
-import android.text.NoCopySpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 import java.util.Calendar;
 
-public class matchSActivity extends Fragment implements DatePickerDialog.OnDateSetListener{
+public class MatchSActivity extends Fragment implements DatePickerDialog.OnDateSetListener{
 
     TextView dateText;
 
@@ -25,10 +25,22 @@ public class matchSActivity extends Fragment implements DatePickerDialog.OnDateS
 
         dateText = view.findViewById(R.id.date_text);
 
+        CardView btnSign=view.findViewById(R.id.create_ad);
+
+
         view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDailog();
+            }
+        });
+
+        btnSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new AdvertsActivity());
+                fr.commit();
             }
         });
 

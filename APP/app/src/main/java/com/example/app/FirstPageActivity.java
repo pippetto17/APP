@@ -22,7 +22,7 @@ public class FirstPageActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new registrationActvity());
+                fr.replace(R.id.fragment_container, new RegistrationActvity());
                 fr.commit();
             }
         });

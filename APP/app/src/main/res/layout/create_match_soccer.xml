@@ -184,22 +184,15 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <EditText
+        <com.google.android.gms.maps.MapView
             android:id="@+id/zone"
             android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_marginTop="26dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/box"
-            android:ems="10"
-            android:hint="Zona"
-            android:inputType="textPersonName"
-            android:paddingStart="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table_mod"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/table_mod" />
 
         <TextView
             android:id="@+id/infos"
