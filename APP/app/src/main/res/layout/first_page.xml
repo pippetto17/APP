@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/app_name_logo_black" />
+        app:srcCompat="@drawable/sporty_logo_name" />
 
     <EditText
         android:id="@+id/mail"

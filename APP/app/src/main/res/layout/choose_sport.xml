@@ -40,7 +40,7 @@
                 android:id="@+id/soccerball"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/soccerball" />
+                app:srcCompat="@drawable/ic_soccer" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -64,7 +64,7 @@
                 android:id="@+id/tennis"
                 android:layout_width="115dp"
                 android:layout_height="115dp"
-                app:srcCompat="@drawable/tennis_racket" />
+                app:srcCompat="@drawable/ic_tennis" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -88,7 +88,7 @@
                 android:id="@+id/paddle"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/paddle_racket" />
+                app:srcCompat="@drawable/ic_paddle" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -113,7 +113,7 @@
                 android:id="@+id/basketball"
                 android:layout_width="135dp"
                 android:layout_height="135dp"
-                app:srcCompat="@drawable/basketball" />
+                app:srcCompat="@drawable/ic_basketball" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -138,7 +138,7 @@
                 android:id="@+id/volley"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/volleyball" />
+                app:srcCompat="@drawable/ic_volleyball" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -163,7 +163,7 @@
                 android:id="@+id/hockeystick"
                 android:layout_width="115dp"
                 android:layout_height="115dp"
-                app:srcCompat="@drawable/hockey" />
+                app:srcCompat="@drawable/ic_hockey" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
