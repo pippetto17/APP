@@ -184,7 +184,8 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <com.google.android.gms.maps.MapView
+        <org.osmdroid.views.MapView
+            tilesource="Mapnik"
             android:id="@+id/zone"
             android:layout_width="260dp"
             android:layout_height="50dp"
