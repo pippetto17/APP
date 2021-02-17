@@ -11,10 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 import java.util.Calendar;
 
-public class MatchTActivity extends Fragment implements DatePickerDialog.OnDateSetListener{
+public class MatchTActivity extends Fragment implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
     TextView dateText;
 
@@ -24,14 +26,16 @@ public class MatchTActivity extends Fragment implements DatePickerDialog.OnDateS
 
         dateText = view.findViewById(R.id.date_text);
 
-        view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDailog();
-            }
-        });
-
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.show_dialog:
+                showDatePickerDailog();
+                break;
+        }
     }
 
 

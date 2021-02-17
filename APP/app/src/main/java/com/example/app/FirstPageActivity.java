@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class FirstPageActivity extends Fragment {
+public class FirstPageActivity extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -18,14 +18,17 @@ public class FirstPageActivity extends Fragment {
 
         TextView btnSign=view.findViewById(R.id.SignIn);
 
-        btnSign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.SignIn:
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new RegistrationActvity());
                 fr.commit();
-            }
-        });
-        return view;
+                break;
+        }
     }
 }

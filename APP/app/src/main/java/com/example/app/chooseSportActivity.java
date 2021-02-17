@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ChooseSportActivity extends Fragment {
+public class ChooseSportActivity extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -19,24 +19,34 @@ public class ChooseSportActivity extends Fragment {
         CardView btnSoccer=view.findViewById(R.id.chooseSoccer);
         CardView btnTennis=view.findViewById(R.id.chooseTennis);
 
-        btnSoccer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new MatchSActivity());
-                fr.commit();
-            }
-        });
-
-        btnTennis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new MatchTActivity());
-                fr.commit();
-            }
-        });
         return view;
         
+    }
+
+    @Override
+    public void onClick(View view) {
+        FragmentTransaction fr = getFragmentManager().beginTransaction();
+        switch (view.getId()){
+            case R.id.chooseSoccer:
+                fr.replace(R.id.fragment_container, new MatchSActivity());
+                fr.commit();
+                break;
+            case R.id.chooseBasket:
+                fr.replace(R.id.fragment_container, new MatchTActivity());
+                fr.commit();
+                break;
+            case R.id.chooseHockey:
+
+                break;
+            case R.id.choosePaddle:
+
+                break;
+            case R.id.chooseVolley:
+
+                break;
+            case R.id.chooseTennis:
+
+                break;
+        }
     }
 }

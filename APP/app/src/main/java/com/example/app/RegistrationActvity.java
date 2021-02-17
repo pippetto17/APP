@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-public class RegistrationActvity extends Fragment {
+public class RegistrationActvity extends Fragment implements View.OnClickListener {
 
     Spinner fascia_eta;
     @Override
@@ -24,18 +24,21 @@ public class RegistrationActvity extends Fragment {
         CardView btnSigReg=view.findViewById(R.id.SignInButton);
 
         fascia_eta=view.findViewById(R.id.fascia_eta);
-        btnSigReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new ChooseSportActivity());
-                fr.commit();
-            }
-        });
 
         setSpinnerStyle();
 
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.fascia_eta:
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new ChooseSportActivity());
+                fr.commit();
+                break;
+        }
     }
 
     private void setSpinnerStyle() {
@@ -43,4 +46,5 @@ public class RegistrationActvity extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fascia_eta.setAdapter(adapter);
     }
+
 }

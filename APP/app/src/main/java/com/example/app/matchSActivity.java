@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import java.util.Calendar;
 
-public class MatchSActivity extends Fragment implements DatePickerDialog.OnDateSetListener{
+public class MatchSActivity extends Fragment implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
 
     TextView dateText;
 
@@ -27,24 +27,21 @@ public class MatchSActivity extends Fragment implements DatePickerDialog.OnDateS
 
         CardView btnSign=view.findViewById(R.id.create_ad);
 
+        return view;
+    }
 
-        view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDailog();
-            }
-        });
-
-        btnSign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.create_ad:
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new AdvertsActivity());
                 fr.commit();
-            }
-        });
-
-        return view;
+                break;
+            case R.id.show_dialog:
+                showDatePickerDailog();
+                break;
+        }
     }
 
 
