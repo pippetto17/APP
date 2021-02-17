@@ -151,6 +151,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
     <Spinner
+        style="@style/SpinnerTheme"
         android:id="@+id/fascia_eta"
         android:layout_width="260dp"
         android:layout_height="50dp"
