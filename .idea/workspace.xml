@@ -22,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/aless/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/APP" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="SvnConfiguration">
@@ -47,10 +47,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1608198512558" />
-    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1608653375621">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="463" y="106" key="FileChooserDialogImpl" timestamp="1614522194388">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608653375621" />
+    <state x="463" y="106" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1614522194388" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1608648784915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

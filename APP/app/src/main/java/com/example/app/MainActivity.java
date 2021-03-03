@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction1.add(R.id.fragment_container, new FirstPageActivity());
+        fragmentTransaction1.add(R.id.fragment_container, new RegistrationActvity());
         fragmentTransaction1.commit();
     }
 }

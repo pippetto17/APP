@@ -7,7 +7,7 @@
     android:background="@drawable/dark_wallpaper">
 
     <EditText
-        android:id="@+id/textName"
+        android:id="@+id/nomeRegistration"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:background="@drawable/box"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
-        android:id="@+id/textSurname"
+        android:id="@+id/cognomeRegistration"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:background="@drawable/box"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <EditText
-        android:id="@+id/textUser"
+        android:id="@+id/emailRegistration"
         android:layout_width="260dp"
         android:layout_height="50dp"
         android:background="@drawable/box"
@@ -71,7 +71,7 @@
 
 
         <EditText
-            android:id="@+id/password_reg"
+            android:id="@+id/passwordRegistration"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -100,7 +100,7 @@
 
 
         <EditText
-            android:id="@+id/password_confirm"
+            android:id="@+id/confermaPasswordRegistration"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -215,7 +215,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.86" />
+        app:layout_constraintGuide_percent="0.83" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.935" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline17"
@@ -223,5 +230,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.37" />
+
+    <TextView
+        android:id="@+id/alreadyRegisteredTextView"
+        android:layout_width="207dp"
+        android:layout_height="18dp"
+        android:text="Sei già registrato? Accedi"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

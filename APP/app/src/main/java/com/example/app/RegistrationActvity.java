@@ -1,5 +1,6 @@
 package com.example.app;
 
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,32 +14,118 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
-public class RegistrationActvity extends Fragment implements View.OnClickListener {
+public class RegistrationActvity extends Fragment {
 
-    Spinner fascia_eta;
+    private Spinner fascia_eta;
+    private CardView btnSigReg;
+    private TextView alreadyRegistered;
+    private TextView nomeTextView;
+    private TextView cognomeTextView;
+    private TextView emailTextView;
+    private TextView passwordTextView;
+    private TextView confermaPasswordTextView;
+
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.registration, container, false);
 
-        CardView btnSigReg=view.findViewById(R.id.SignInButton);
-
-        fascia_eta=view.findViewById(R.id.fascia_eta);
+        btnSigReg = view.findViewById(R.id.SignInButton);
+        fascia_eta = view.findViewById(R.id.fascia_eta);
+        alreadyRegistered = view.findViewById(R.id.alreadyRegisteredTextView);
+        nomeTextView = view.findViewById(R.id.nomeRegistration);
+        cognomeTextView = view.findViewById(R.id.cognomeRegistration);
+        emailTextView = view.findViewById(R.id.emailRegistration);
+        passwordTextView = view.findViewById(R.id.passwordRegistration);
+        confermaPasswordTextView = view.findViewById(R.id.confermaPasswordRegistration);
 
         setSpinnerStyle();
+
+        btnSigReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        alreadyRegistered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new Login());
+                fr.commit();
+            }
+        });
+
+        btnSigReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                register();
+            }
+        });
 
         return view;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.fascia_eta:
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new ChooseSportActivity());
-                fr.commit();
-                break;
+    private void register() {
+
+        String nome = nomeTextView.getText().toString().trim();
+        String cognome = cognomeTextView.getText().toString().trim();
+        String email = emailTextView.getText().toString().trim();
+        String password = passwordTextView.getText().toString().trim();
+        String confermaPassword = confermaPasswordTextView.getText().toString().trim();
+
+        //Controlla che il campo per il nome non sia vuoto
+        if(nome.isEmpty()){
+            nomeTextView.setError("Questo campo non può essere vuoto");
+            nomeTextView.requestFocus();
+            return;
         }
+
+        //Controlla che il campo per il cognome non sia vuoto
+        if(cognome.isEmpty()){
+            cognomeTextView.setError("Questo campo non può essere vuoto");
+            cognomeTextView.requestFocus();
+            return;
+        }
+
+        //Controlla che il campo per la email non sia vuoto
+        if(email.isEmpty()){
+            emailTextView.setError("Questo campo non può essere vuoto");
+            emailTextView.requestFocus();
+            return;
+        }
+
+        //Controllo validazione email
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            emailTextView.setError("Questa mail non è valida");
+            emailTextView.requestFocus();
+            return;
+        }
+
+        //Controlla che il campo per la password non sia vuoto
+        if(password.isEmpty()){
+            passwordTextView.setError("Questo campo non può essere vuoto");
+            passwordTextView.requestFocus();
+            return;
+        }
+
+        //Controlla che il campo per la conferma della password non sia vuoto
+        if(confermaPassword.isEmpty()){
+            confermaPasswordTextView.setError("Questo campo non può essere vuoto");
+            confermaPasswordTextView.requestFocus();
+            return;
+        }
+
+        //Controlla che la password e la conferma della password siano uguali
+        if(!confermaPassword.equals(password)){
+            confermaPasswordTextView.setError("La password di conferma non è uguale");
+            confermaPasswordTextView.requestFocus();
+            return;
+        }
+
     }
 
     private void setSpinnerStyle() {
