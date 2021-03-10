@@ -20,7 +20,6 @@ public class RegistrationActvity extends Fragment {
 
     private Spinner fascia_eta;
     private CardView btnSigReg;
-    private TextView alreadyRegistered;
     private TextView nomeTextView;
     private TextView cognomeTextView;
     private TextView emailTextView;
@@ -34,7 +33,6 @@ public class RegistrationActvity extends Fragment {
 
         btnSigReg = view.findViewById(R.id.SignInButton);
         fascia_eta = view.findViewById(R.id.fascia_eta);
-        alreadyRegistered = view.findViewById(R.id.alreadyRegisteredTextView);
         nomeTextView = view.findViewById(R.id.nomeRegistration);
         cognomeTextView = view.findViewById(R.id.cognomeRegistration);
         emailTextView = view.findViewById(R.id.emailRegistration);
@@ -45,23 +43,7 @@ public class RegistrationActvity extends Fragment {
 
         btnSigReg.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        alreadyRegistered.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new Login());
-                fr.commit();
-            }
-        });
-
-        btnSigReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 register();
             }
         });
@@ -125,6 +107,11 @@ public class RegistrationActvity extends Fragment {
             confermaPasswordTextView.requestFocus();
             return;
         }
+
+        FragmentTransaction fr = getFragmentManager().beginTransaction();
+        fr.replace(R.id.fragment_container, new Login());
+        fr.commit();
+
 
     }
 

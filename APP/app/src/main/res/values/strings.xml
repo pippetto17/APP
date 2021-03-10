@@ -1,4 +1,8 @@
 <resources>
-        <string name="app_name">Sporty</string>
+    <string name="app_name">Sporty</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_search">Cerca</string>
+    <string name="title_user">Area Privata</string>
+    <string name="title_add">Inserisci</string>
 
 </resources>

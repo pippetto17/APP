@@ -34,7 +34,7 @@ public class Login extends Fragment{
 
         btnSign.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container, new RegistrationActvity());
                 fr.commit();
@@ -43,8 +43,10 @@ public class Login extends Fragment{
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                login();
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_container, new AdvertsActivity());
+                fr.commit();
             }
         });
 
