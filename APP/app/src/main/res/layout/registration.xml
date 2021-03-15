@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </androidx.appcompat.widget.AppCompatImageView>
+
         <EditText
             android:id="@+id/nomeRegistration"
             android:layout_width="260dp"
@@ -38,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userImage"/>
+            app:layout_constraintTop_toBottomOf="@id/userImage" />
 
         <EditText
             android:id="@+id/cognomeRegistration"
@@ -72,7 +73,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cognomeRegistration"/>
+            app:layout_constraintTop_toBottomOf="@+id/cognomeRegistration" />
 
         <TextView
             android:id="@+id/texteta"
@@ -86,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailRegistration"/>
+            app:layout_constraintTop_toBottomOf="@+id/emailRegistration" />
 
         <Spinner
             android:id="@+id/fascia_eta"
@@ -98,7 +99,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/texteta"/>
+            app:layout_constraintTop_toBottomOf="@+id/texteta" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_cover_reg"
@@ -110,11 +111,11 @@
             android:inputType="textPersonName"
             android:textColorHint="@color/black"
             app:counterEnabled="false"
-            app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fascia_eta">
+            app:layout_constraintTop_toBottomOf="@+id/fascia_eta"
+            app:passwordToggleEnabled="true">
 
 
             <EditText
@@ -138,11 +139,11 @@
             android:inputType="textPersonName"
             android:textColorHint="@color/black"
             app:counterEnabled="false"
-            app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_cover_reg">
+            app:layout_constraintTop_toBottomOf="@+id/password_cover_reg"
+            app:passwordToggleEnabled="true">
 
 
             <EditText

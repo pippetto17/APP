@@ -20,5 +20,5 @@
         android:id="@+id/navigation_user"
         android:name="com.example.app.ui.user.UserFragment"
         android:label="@string/title_user"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_user" />
 </navigation>
