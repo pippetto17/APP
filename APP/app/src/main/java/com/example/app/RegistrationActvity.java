@@ -1,5 +1,10 @@
 package com.example.app;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,14 +14,22 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.sql.*;
 
 public class RegistrationActvity extends Fragment {
+
+    private int STORAGE_PERMISSION_CODE = 1;
 
     private Spinner fascia_eta;
     private CardView btnSigReg;
@@ -25,6 +38,7 @@ public class RegistrationActvity extends Fragment {
     private TextView emailTextView;
     private TextView passwordTextView;
     private TextView confermaPasswordTextView;
+    private AppCompatImageView btnCaricaFoto;
 
 
     @Override
@@ -38,21 +52,69 @@ public class RegistrationActvity extends Fragment {
         emailTextView = view.findViewById(R.id.emailRegistration);
         passwordTextView = view.findViewById(R.id.passwordRegistration);
         confermaPasswordTextView = view.findViewById(R.id.confermaPasswordRegistration);
+        btnCaricaFoto = view.findViewById(R.id.userImage);
 
         setSpinnerStyle();
 
         btnSigReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register();
+                userRegister();
+            }
+        });
+
+        btnCaricaFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!(ContextCompat.checkSelfPermission(getActivity(),
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
+                    requestStoragePermission();
+                }
             }
         });
 
         return view;
     }
 
-    private void register() {
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            new AlertDialog.Builder(getActivity())
+                    .setTitle("Permesso accesso galleria")
+                    .setMessage("È richiesto il seguente permesso per caricare un immagine profilo")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(getActivity(),
+                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == STORAGE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getActivity(), "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
+    private void userRegister() {
+
+        /**
         String nome = nomeTextView.getText().toString().trim();
         String cognome = cognomeTextView.getText().toString().trim();
         String email = emailTextView.getText().toString().trim();
@@ -111,9 +173,59 @@ public class RegistrationActvity extends Fragment {
         FragmentTransaction fr = getFragmentManager().beginTransaction();
         fr.replace(R.id.fragment_container, new Login());
         fr.commit();
+         **/
 
 
+        //Creo la connessione al database
+
+        Connection cn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        String url = "jdbc:mysql://localhost:3306/luca";
+        String user = "root";
+        String rootPassword = "Luca2002Perseverance";
+        String driver = "com.mysql.cj.jdbc.Driver";
+
+        //Installo i Driver
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            Log.e("connectiondb", "ClassNotFoundException " + e.getMessage());
+            return;
+        }
+
+        // Creo la connessione al database
+        try{
+            cn = DriverManager.getConnection(url, user, rootPassword);
+        }
+        catch (SQLException e){
+            Log.e("connectiondb", "Errore nella connessione " + e.getMessage());
+            return;
+        }
+
+        //Esegue comandi
+        try {
+            st = cn.createStatement();
+            rs = st.executeQuery("SELECT * FROM luca.tabella");
+
+            //Verifica se c'è un ulteriore campo dopo quello appena letto
+            while(rs.next()){
+                Log.e("connectiondb", rs.getString("Nome"));
+            }
+        }
+        catch (SQLException e) {
+            Log.e("connectiondb", "Errore nell'interrogazione' " + e.getMessage());
+            return;
+        }
+
+        //Chiude connessione
+        try {
+            cn.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
+
 
     private void setSpinnerStyle() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.eta, android.R.layout.simple_spinner_item);
