@@ -45,7 +45,7 @@ public class Login extends Fragment{
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new AdvertsActivity());
+                fr.replace(R.id.fragment_container, new MatchSActivity());
                 fr.commit();
             }
         });
