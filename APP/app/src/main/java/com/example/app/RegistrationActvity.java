@@ -3,13 +3,20 @@ package com.example.app;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.telephony.ims.ImsMmTelManager;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -27,9 +34,23 @@ import android.widget.Toast;
 
 import java.sql.*;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import static android.app.Activity.RESULT_OK;
+
 public class RegistrationActvity extends Fragment {
 
     private int STORAGE_PERMISSION_CODE = 1;
+    private static int RESULT_LOAD_IMAGE = 1;
 
     private Spinner fascia_eta;
     private CardView btnSigReg;
@@ -38,7 +59,9 @@ public class RegistrationActvity extends Fragment {
     private TextView emailTextView;
     private TextView passwordTextView;
     private TextView confermaPasswordTextView;
-    private AppCompatImageView btnCaricaFoto;
+    private ImageView btnCaricaFoto;
+
+    private Uri imageUri;
 
 
     @Override
@@ -70,17 +93,22 @@ public class RegistrationActvity extends Fragment {
                         Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
                     requestStoragePermission();
                 }
+                else {
+                   //Sceglie l'immagine
+
+                }
             }
         });
 
         return view;
     }
 
+
     private void requestStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                 Manifest.permission.READ_EXTERNAL_STORAGE)) {
             new AlertDialog.Builder(getActivity())
-                    .setTitle("Permesso accesso galleria")
+                    .setTitle("Sporty richiede l'accesso alla tua galleria")
                     .setMessage("È richiesto il seguente permesso per caricare un immagine profilo")
                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                         @Override
