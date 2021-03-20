@@ -50,7 +50,6 @@ import static android.app.Activity.RESULT_OK;
 public class RegistrationActvity extends Fragment {
 
     private int STORAGE_PERMISSION_CODE = 1;
-    private static int RESULT_LOAD_IMAGE = 1;
 
     private Spinner fascia_eta;
     private CardView btnSigReg;
@@ -82,6 +81,7 @@ public class RegistrationActvity extends Fragment {
         btnSigReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 userRegister();
             }
         });
@@ -203,16 +203,15 @@ public class RegistrationActvity extends Fragment {
         fr.commit();
          **/
 
-
         //Creo la connessione al database
 
         Connection cn = null;
         Statement st = null;
         ResultSet rs = null;
-        String url = "jdbc:mysql://localhost:3306/luca";
-        String user = "root";
-        String rootPassword = "Luca2002Perseverance";
-        String driver = "com.mysql.cj.jdbc.Driver";
+        String url = "jdbc:mysql://93.43.208.27:8457/sportydb";
+        String user = "sporty";
+        String password = "sporty";
+        String driver = "net.sourceforge.jtds.jdbc.Driver";
 
         //Installo i Driver
         try {
@@ -224,7 +223,7 @@ public class RegistrationActvity extends Fragment {
 
         // Creo la connessione al database
         try{
-            cn = DriverManager.getConnection(url, user, rootPassword);
+            cn = DriverManager.getConnection(url, user, password);
         }
         catch (SQLException e){
             Log.e("connectiondb", "Errore nella connessione " + e.getMessage());
@@ -234,7 +233,7 @@ public class RegistrationActvity extends Fragment {
         //Esegue comandi
         try {
             st = cn.createStatement();
-            rs = st.executeQuery("SELECT * FROM luca.tabella");
+            rs = st.executeQuery("SELECT * FROM sportydb.Users");
 
             //Verifica se c'è un ulteriore campo dopo quello appena letto
             while(rs.next()){
