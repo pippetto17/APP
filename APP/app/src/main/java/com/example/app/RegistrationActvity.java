@@ -49,6 +49,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class RegistrationActvity extends Fragment {
 
+    //Prova
     private int STORAGE_PERMISSION_CODE = 1;
 
     private Spinner fascia_eta;
@@ -211,7 +212,7 @@ public class RegistrationActvity extends Fragment {
         String url = "jdbc:mysql://93.43.208.27:8457/sportydb";
         String user = "sporty";
         String password = "sporty";
-        String driver = "net.sourceforge.jtds.jdbc.Driver";
+        String driver = "com.mysql.cj.jdbc.Driver";
 
         //Installo i Driver
         try {
