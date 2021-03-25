@@ -5,7 +5,7 @@
     android:layout_width="350dp"
     android:layout_height="180dp"
     android:layout_gravity="center"
-    app:cardBackgroundColor="#78AC53"
+    app:cardBackgroundColor="#ba926c"
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="65dp"
             android:layout_height="65dp"
-            app:cardBackgroundColor="#C51409"
+            app:cardBackgroundColor="#673AB7"
             app:cardCornerRadius="50dp"
             android:layout_margin="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_soccer" />
+                app:srcCompat="@drawable/ic_basketball" />
         </androidx.cardview.widget.CardView>
 
         <TextView
