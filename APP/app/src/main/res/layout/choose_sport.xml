@@ -68,12 +68,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="17.5dp">
+            android:padding="15dp">
 
             <ImageView
                 android:id="@+id/tennis"
-                android:layout_width="145dp"
-                android:layout_height="145dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 app:srcCompat="@drawable/ic_tennis" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -101,13 +101,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/paddle"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_paddle" />
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                app:srcCompat="@drawable/ic_padel" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -135,13 +135,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="7.5dp">
+            android:padding="15dp">
 
             <ImageView
                 android:id="@+id/basketball"
-                android:layout_width="165dp"
-                android:layout_height="165dp"
-                app:srcCompat="@drawable/ic_basketball" />
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_basket" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
