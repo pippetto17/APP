@@ -143,7 +143,7 @@ public class RegistrationActvity extends Fragment {
 
     private void userRegister() {
 
-        /**
+
         String nome = nomeTextView.getText().toString().trim();
         String cognome = cognomeTextView.getText().toString().trim();
         String email = emailTextView.getText().toString().trim();
@@ -202,56 +202,7 @@ public class RegistrationActvity extends Fragment {
         FragmentTransaction fr = getFragmentManager().beginTransaction();
         fr.replace(R.id.fragment_container, new Login());
         fr.commit();
-         **/
 
-        //Creo la connessione al database
-
-        Connection cn = null;
-        Statement st = null;
-        ResultSet rs = null;
-        String url = "jdbc:mysql://93.43.208.27:8457/sportydb";
-        String user = "sporty";
-        String password = "sporty";
-        String driver = "com.mysql.cj.jdbc.Driver";
-
-        //Installo i Driver
-        try {
-            Class.forName(driver);
-        } catch (ClassNotFoundException e) {
-            Log.e("connectiondb", "ClassNotFoundException " + e.getMessage());
-            return;
-        }
-
-        // Creo la connessione al database
-        try{
-            cn = DriverManager.getConnection(url, user, password);
-        }
-        catch (SQLException e){
-            Log.e("connectiondb", "Errore nella connessione " + e.getMessage());
-            return;
-        }
-
-        //Esegue comandi
-        try {
-            st = cn.createStatement();
-            rs = st.executeQuery("SELECT * FROM sportydb.Users");
-
-            //Verifica se c'è un ulteriore campo dopo quello appena letto
-            while(rs.next()){
-                Log.e("connectiondb", rs.getString("Nome"));
-            }
-        }
-        catch (SQLException e) {
-            Log.e("connectiondb", "Errore nell'interrogazione' " + e.getMessage());
-            return;
-        }
-
-        //Chiude connessione
-        try {
-            cn.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
     }
 
 
