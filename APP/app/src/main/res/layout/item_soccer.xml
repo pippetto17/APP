@@ -26,7 +26,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageCreator"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_user"

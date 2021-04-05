@@ -10,49 +10,57 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import java.util.Calendar;
 
-public class MatchTActivity extends Fragment implements DatePickerDialog.OnDateSetListener, View.OnClickListener {
-
-    TextView dateText;
-
+public class MatchTActivity extends AppCompatActivity
+{
+    TextView date_text;
+    CardView show_dialog;
+    Calendar calendar;
+    int year,month,day;
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.create_match_tennis, container, false);
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.create_match_soccer);
+        //getting calendar instance
+        calendar = Calendar.getInstance();
+        year=calendar.get(Calendar.YEAR);
+        month=calendar.get(Calendar.MONTH);
+        day=calendar.get(Calendar.DAY_OF_MONTH);
 
-        dateText = view.findViewById(R.id.date_text);
-
-        return view;
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.show_dialog:
-                showDatePickerDailog();
-                break;
-        }
-    }
+        //accessing EditText and Button
+        date_text = (TextView) findViewById(R.id.date_text);
+        show_dialog = (CardView) findViewById(R.id.show_dialog);
 
 
-    private void showDatePickerDailog(){
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                getActivity(),
-                this,
-                Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
-                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-        );
-        datePickerDialog.show();
-    };
+        show_dialog.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
 
-    @Override
-    public void onDateSet(DatePicker datePicker, int dayOfMonth, int month, int year) {
-        String date = "Data: " + dayOfMonth + "/" + month + "/" + year;
-        dateText.setText(date);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(MatchTActivity.this, new DatePickerDialog.OnDateSetListener()
+                {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
+                    {
+                        //sets date in EditText
+                        date_text.setText(dayOfMonth+"/"+ (month+1) +"/"+year);
+                    }
+                }, year, month, day);
+                //shows DatePickerDialog
+                datePickerDialog.show();
+
+            }
+        });
+
+
+
     }
 }

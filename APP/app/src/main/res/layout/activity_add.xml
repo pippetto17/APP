@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_wallpaper">
+    android:background="@drawable/dark_wallpaper"
+    tools:context=".Add">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ExplAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Scegli uno sport con cui vuoi creare l'annuncio"
@@ -21,11 +22,23 @@
         app:layout_constraintTop_toTopOf="@+id/guideline21" />
 
     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="?attr/colorOnPrimarySurface"
+        app:cardCornerRadius="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline23"
+        app:layout_constraintBottom_toBottomOf="@id/guideline24"/>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/chooseSoccer"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="#4BA44A"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toTopOf="@+id/guideline16">
@@ -39,9 +52,9 @@
 
             <ImageView
                 android:id="@+id/soccerball"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_soccer" />
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/ic_ball_soccer" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -49,17 +62,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CALCIO"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:textSize="20sp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="@+id/guideline"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/chooseTennis"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="#D5762E"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
         app:layout_constraintTop_toTopOf="@+id/guideline16">
@@ -72,9 +88,9 @@
 
             <ImageView
                 android:id="@+id/tennis"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_tennis" />
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_ball_tennisss"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -82,17 +98,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TENNIS"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:elevation="2dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/choosePaddle"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="#3333B7"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toTopOf="@+id/guideline18">
@@ -105,27 +124,30 @@
 
             <ImageView
                 android:id="@+id/paddle"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                app:srcCompat="@drawable/ic_padel" />
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                app:srcCompat="@drawable/ic_ball_padel" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PADEL"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:text="PADDLE"
+        android:textStyle="bold"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:elevation="2dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/chooseBasket"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="60dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardBackgroundColor="#CA3838"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
         app:layout_constraintTop_toTopOf="@+id/guideline18">
@@ -139,9 +161,9 @@
 
             <ImageView
                 android:id="@+id/basketball"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/ic_basket" />
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:srcCompat="@drawable/ic_ball_basket" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -149,17 +171,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BASKET"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:textColor="?attr/colorSecondaryVariant"
+        android:elevation="2dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/guideline20"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25060827" />
+        app:layout_constraintGuide_percent="0.285" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline16"
@@ -173,14 +198,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.59" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.7518248" />
+        app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline21"
@@ -201,12 +226,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.47613066" />
+        app:layout_constraintGuide_percent="0.48" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.82537687" />
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/black"
+        app:itemIconTint="@drawable/tab_color"
+        app:itemTextColor="@drawable/tab_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/app_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

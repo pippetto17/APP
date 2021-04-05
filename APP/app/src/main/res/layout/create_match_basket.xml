@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dark_wallpaper"
-    tools:context=".MatchTActivity">
+    tools:context=".MatchSActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="40dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/show_dialog"
@@ -152,69 +152,51 @@
             app:layout_constraintTop_toBottomOf="@+id/mod_text">
 
             <CheckBox
-                android:id="@+id/checkBox_single"
+                android:id="@+id/checkBox_fiveP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="140dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/single"
+                android:id="@+id/fiveP"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="-64dp"
+                android:layout_marginStart="-38dp"
                 android:layout_marginTop="30dp"
-                android:text="SINGOLO"
+                android:text="5"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox_dual"
+                android:id="@+id/checkBox_eightP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
+                android:layout_marginStart="80dp"
                 android:buttonTint="#000000" />
 
             <TextView
-                android:id="@+id/dual"
+                android:id="@+id/eightP"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="-57dp"
+                android:layout_marginStart="-35dp"
                 android:layout_marginTop="30dp"
-                android:text="DOPPIO"
+                android:text="8"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </TableRow>
 
-        <EditText
-            android:id="@+id/zone"
-            android:layout_width="260dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="26dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/box"
-            android:ems="10"
-            android:hint="Zona"
-            android:textColorHint="@color/black"
-            android:inputType="textPersonName"
-            android:paddingStart="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table_mod" />
-
-
         <TextView
             android:id="@+id/infos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="160dp"
             android:text="INFORMAZIONI AGGIUNTIVE"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zone" />
+            app:layout_constraintTop_toBottomOf="@+id/table_mod" />
 
         <EditText
             android:id="@+id/info_box"

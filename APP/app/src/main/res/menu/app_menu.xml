@@ -7,7 +7,7 @@
         android:title="@string/title_search" />
     <item
         android:id="@+id/navigation_add"
-        android:icon="@drawable/ic_new_advert"
+        android:icon="@drawable/ic_add_advert"
         android:title="@string/title_add" />
     <item
         android:id="@+id/navigation_user"

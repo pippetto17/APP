@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_item_padel">
+        android:background="@drawable/ic_item_paddle">
 
         <TextView
             android:id="@+id/CNameAdv"
@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_user"

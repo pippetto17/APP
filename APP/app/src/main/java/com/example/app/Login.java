@@ -2,85 +2,96 @@ package com.example.app;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Login extends Fragment{
+import com.google.android.material.textfield.TextInputEditText;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-    //Bottoni login e registrazione
-    private TextView btnSign;
-    private CardView btnLogin;
+public class Login extends AppCompatActivity {
 
-    //Campi mail e password
-    private TextView emailTextView;
-    private TextView passwordTextView;
+
+    EditText EditTextEmail, EditTextPassword;
+    CardView buttonLogin;
+    TextView textViewSignup;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.login, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        btnSign = view.findViewById(R.id.SignIn);
-        btnLogin = view.findViewById(R.id.loginButton);
+        EditTextEmail = findViewById(R.id.emailLogin);
+        EditTextPassword = findViewById(R.id.passwordLogin);
+        buttonLogin = findViewById(R.id.buttonLogin);
+        textViewSignup = findViewById(R.id.textViewSignup);
 
-        emailTextView = view.findViewById(R.id.mailLogin);
-        passwordTextView = view.findViewById(R.id.passwordLogin);
-
-        btnSign.setOnClickListener(new View.OnClickListener() {
+        textViewSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new RegistrationActvity());
-                fr.commit();
+                Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.fragment_container, new MatchSActivity());
-                fr.commit();
+
+                String email, password;
+                email = String.valueOf(EditTextEmail.getText());
+                password = String.valueOf(EditTextPassword.getText());
+
+
+                if (!email.isEmpty() && !password.isEmpty()) {
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            String[] field = new String[2];
+                            field[0] = "email";
+                            field[1] = "password";
+
+                            String[] data = new String[2];
+                            data[0] = email;
+                            data[1] = password;
+                            PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/login.php", "POST", field, data);
+
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
+                                    String result = putData.getResult();
+                                    if (result.equals("Login riuscito")) {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), Search.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
-        return view;
-    }
-
-    private void login() {
-
-        //Estrapola i dati dalle textview
-        String email = emailTextView.getText().toString().trim();
-        String password = passwordTextView.getText().toString().trim();
-
-        //Controlla che il campo per la email non sia vuoto
-        if(email.isEmpty()){
-            emailTextView.setError("Questo campo non può essere vuoto");
-            emailTextView.requestFocus();
-            return;
-        }
-
-        //Controllo validazione email
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailTextView.setError("Questa mail non è valida");
-            emailTextView.requestFocus();
-            return;
-        }
-
-        //Controlla che il campo per la password non sia vuoto
-        if(password.isEmpty()){
-            passwordTextView.setError("Questo campo non può essere vuoto");
-            passwordTextView.requestFocus();
-            return;
-        }
-
-
-
     }
 }

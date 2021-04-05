@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="eta">
-        <item>15-18</item>
-        <item>19-25</item>
-        <item>26-40</item>
-        <item>altro</item>
-    </string-array>
-
 
 </resources>
