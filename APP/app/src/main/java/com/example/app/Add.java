@@ -34,7 +34,36 @@ public class Add extends AppCompatActivity {
         soccer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Add.this, MatchActivity.class));
+                Intent intent  = new Intent(Add.this, MainActivity.class);
+                intent.putExtra("sport_name", "calcio");
+                startActivity(intent);
+            }
+        });
+
+        tennis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(Add.this, MainActivity.class);
+                intent.putExtra("sport_name", "tennis");
+                startActivity(intent);
+            }
+        });
+
+        basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(Add.this, MainActivity.class);
+                intent.putExtra("sport_name", "basket");
+                startActivity(intent);
+            }
+        });
+
+        paddle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  = new Intent(Add.this, MainActivity.class);
+                intent.putExtra("sport_name", "paddle");
+                startActivity(intent);
             }
         });
 

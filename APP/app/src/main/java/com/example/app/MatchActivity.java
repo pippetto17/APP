@@ -7,9 +7,11 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +25,8 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 import java.util.Calendar;
 
 public class MatchActivity extends AppCompatActivity {
-    EditText EditSport, EditFascia, EditMod, EditInfo;
+    EditText EditSport, EditFascia, EditInfo;
+    Spinner EditMod;
 
     SharedPreferences sharedPreferences;
 
@@ -38,18 +41,16 @@ public class MatchActivity extends AppCompatActivity {
 
     int year, month, day;
 
-    String choosedSport;
+    String choosedSport = null;
 
-
-    public void MatchActivity(String sportName){
-
-        this.choosedSport = sportName.trim();
-
-    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_match_soccer);
+
+        choosedSport = getIntent().getStringExtra("sport_name");
+
+
         //getting calendar instance
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
@@ -63,7 +64,7 @@ public class MatchActivity extends AppCompatActivity {
         //dati da passare al onClick per la creazione del match sul DB
         EditSport = (EditText) findViewById(R.id.sport);
         EditFascia = (EditText) findViewById(R.id.fascia_oraria);
-        EditMod = (EditText) findViewById(R.id.modalita);
+        EditMod = findViewById(R.id.modalita);
         EditInfo = (EditText) findViewById(R.id.info_box);
         create_ad = (CardView) findViewById(R.id.create_ad);
 
@@ -87,6 +88,36 @@ public class MatchActivity extends AppCompatActivity {
             }
         });
 
+        switch(choosedSport){
+            case "calcio":
+                ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
+                        R.array.soccer_mod, android.R.layout.simple_spinner_item);
+                adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                EditMod.setAdapter(adapter1);
+                break;
+
+            case "tennis":
+                ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                        R.array.tennis_mod, android.R.layout.simple_spinner_item);
+                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                EditMod.setAdapter(adapter2);
+                break;
+
+            case "basket":
+                ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                        R.array.basket_mod, android.R.layout.simple_spinner_item);
+                adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                EditMod.setAdapter(adapter3);
+                break;
+            case "paddel":
+                ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
+                    R.array.paddle_mod, android.R.layout.simple_spinner_item);
+                adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                EditMod.setAdapter(adapter4);
+                break;
+        }
+
+/**
         //metodo per inviare dati al db
         create_ad.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +126,9 @@ public class MatchActivity extends AppCompatActivity {
                 String sport, fascia_oraria, modalita, info_box;
                 sport = String.valueOf(EditSport.getText()).trim();
                 fascia_oraria = String.valueOf(EditFascia.getText()).trim();
-                modalita = String.valueOf(EditMod.getText()).trim();
+
+                //modalita = String.valueOf(EditMod.getText()).trim();
+
                 info_box = String.valueOf(EditInfo.getText());
 
                 //riprendere email del creatore
@@ -144,6 +177,6 @@ public class MatchActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });**/
     }
 }

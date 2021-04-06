@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="soccer_mod">
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="basket_mod">
+        <item>5</item>
+    </string-array>
+
+    <string-array name="tennis_mod">
+        <item>singolo</item>
+        <item>doppio</item>
+    </string-array>
+
+    <string-array name="paddle_mod">
+        <item>singolo</item>
+        <item>doppio</item>
+    </string-array>
+
 </resources>
