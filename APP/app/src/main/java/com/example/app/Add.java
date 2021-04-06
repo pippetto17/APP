@@ -27,33 +27,14 @@ public class Add extends AppCompatActivity {
         paddle = findViewById(R.id.choosePaddle);
         tennis = findViewById(R.id.chooseTennis);
 
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         soccer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Add.this, AdvertS.class));
-            }
-        });
-
-        basket.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Add.this, AdvertB.class));
-            }
-        });
-
-        paddle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Add.this, AdvertP.class));
-            }
-        });
-
-        tennis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Add.this, AdvertT.class));
+                startActivity(new Intent(Add.this, MatchActivity.class));
             }
         });
 

@@ -18,13 +18,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //Legge le shared preferences dal file di testo
         sharedPreferences  = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
         String email = sharedPreferences.getString("emailLogin", "");
         String password = sharedPreferences.getString("passwordLogin", "");
-
+        
         if(!email.isEmpty() && !password.isEmpty())
         {
             //Viene effettuato il login automatico se dovessero essere presenti le credenziali

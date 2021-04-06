@@ -12,6 +12,8 @@
         <item name="colorOnPrimarySurface">#1D3729</item>
         <item name="colorBackgroundFloating">#41493E</item>
         <item name="colorSurface">#494949</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="color">#4A4A4A</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

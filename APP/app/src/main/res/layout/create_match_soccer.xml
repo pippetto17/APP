@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dark_wallpaper"
-    tools:context=".MatchSActivity">
+    tools:context=".MatchActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +39,6 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-
         <TextView
             android:id="@+id/date_text"
             android:layout_width="wrap_content"
@@ -47,7 +46,7 @@
             android:layout_marginTop="20dp"
             android:hint="@string/data"
             android:textColor="@color/black"
-            android:textColorHint="#424242"
+            android:textColorHint="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -59,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/fascia_oraria"
+            android:text="@string/fascia_oraria2"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,125 +66,84 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_text" />
 
-        <TableRow
-            android:id="@+id/table_time"
-            android:layout_width="414dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sport_cover"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/sport"
+            android:textColorHint="?attr/colorSecondaryVariant"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/time_text">
+            app:layout_constraintTop_toBottomOf="@id/time_text">
 
-            <CheckBox
-                android:id="@+id/checkBox_morning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:buttonTint="#000000" />
+            <EditText
+                android:id="@+id/sport"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@drawable/box_embed"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/morning"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="-65dp"
-                android:layout_marginTop="30dp"
-                android:text="MATTINA"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox_afteroon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:buttonTint="#000000" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fascia_cover"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:ems="10"
+            android:layout_marginTop="30dp"
+            android:hint="@string/fascia_oraria"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sport_cover">
 
-            <TextView
-                android:id="@+id/afternoon"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="-78dp"
-                android:layout_marginTop="30dp"
-                android:text="POMERIGGIO"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/fascia_oraria"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@drawable/box_embed"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
-            <CheckBox
-                android:id="@+id/checkBox_evening"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:buttonTint="#000000" />
-
-            <TextView
-                android:id="@+id/evening"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="-50dp"
-                android:layout_marginTop="30dp"
-                android:text="SERA"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </TableRow>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/mod_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/modalit"
             android:layout_marginTop="20dp"
-            android:text="Modalità di gioco:"
             android:textColor="@color/black"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table_time" />
+            app:layout_constraintTop_toBottomOf="@id/fascia_cover"/>
 
-        <TableRow
-            android:id="@+id/table_mod"
-            android:layout_width="414dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+        <Spinner
+            android:id="@+id/modalita"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:elevation="2dp"
+            android:ems="10"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/box"
+            android:textColorHint="?attr/colorSecondaryVariant"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mod_text">
-
-            <CheckBox
-                android:id="@+id/checkBox_fiveP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
-                android:buttonTint="#000000" />
-
-            <TextView
-                android:id="@+id/fiveP"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="-38dp"
-                android:layout_marginTop="30dp"
-                android:text="5"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <CheckBox
-                android:id="@+id/checkBox_eightP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:buttonTint="#000000" />
-
-            <TextView
-                android:id="@+id/eightP"
-                android:layout_width="wrap_content"
-                android:layout_marginStart="-35dp"
-                android:layout_marginTop="30dp"
-                android:text="8"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </TableRow>
+            app:layout_constraintTop_toBottomOf="@id/fascia_cover"/>
 
         <TextView
             android:id="@+id/infos"
@@ -197,7 +155,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/table_mod" />
+            app:layout_constraintTop_toBottomOf="@+id/modalita" />
 
         <EditText
             android:id="@+id/info_box"
