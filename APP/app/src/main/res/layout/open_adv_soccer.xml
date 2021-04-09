@@ -140,7 +140,7 @@
             android:layout_marginTop="550dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
+            android:paddingBottom="30dp"
             app:cardCornerRadius="20dp"
             android:backgroundTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"

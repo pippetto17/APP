@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -32,6 +33,7 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -134,8 +136,10 @@ public class SignUp extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
+
             if (resultCode == RESULT_OK) {
                 img.setImageURI(result.getUri());
+
                 helpText.setVisibility(View.GONE);
                 Toast.makeText(
                         this, "Immagine caricata correttamente", Toast.LENGTH_LONG)
@@ -144,5 +148,14 @@ public class SignUp extends AppCompatActivity {
                 Toast.makeText(this, "Immagine non modificata: " + result.getError(), Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(SignUp.this, Login.class));
+        finish();
+
     }
 }

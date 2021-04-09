@@ -22,17 +22,19 @@
     <string name="modifica_immagine_profilo">Modifica Immagine Profilo</string>
     <string name="forgot_password">forgot Password</string>
     <string name="registrati_no_caps">Registrati</string>
-    <string name="data">Data</string>
-    <string name="fascia_oraria2">Fascia oraria:</string>
-    <string name="fascia_oraria">Fascia oraria</string>
+    <string name="data">DATA</string>
+    <string name="fascia_oraria">FASCIA ORARIA</string>
     <string name="calcio">CALCIO</string>
     <string name="tennis">TENNIS</string>
     <string name="basket">BASKET</string>
     <string name="paddle">PADDLE</string>
     <string name="scegli_uno_sport_per_creare_un_annuncio">SCEGLI UNO SPORT PER CREARE UN ANNUNCIO</string>
     <string name="please_select_the_checkbox_before_proceeding">Please Select the checkbox before proceeding</string>
-    <string name="modalit">Modalità</string>
+    <string name="modalit">MODALITÀ</string>
     <string name="sport">Sport</string>
+    <string name="seleziona_data">SELEZIONA DATA</string>
+    <string name="creazione_annuncio">CREAZIONE ANNUNCIO</string>
+    <string name="crea_annuncio">CREA ANNUNCIO</string>
 
     <string-array name="nome">
         <item>Filippo Carletti</item> //calcio

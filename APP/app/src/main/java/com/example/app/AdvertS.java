@@ -21,10 +21,19 @@ public class AdvertS extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Add.class);
+                Intent intent = new Intent(getApplicationContext(), Search.class);
                 startActivity(intent);
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(AdvertS.this, Search.class));
+        finish();
+
     }
 }

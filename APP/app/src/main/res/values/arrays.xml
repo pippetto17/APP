@@ -20,4 +20,17 @@
         <item>doppio</item>
     </string-array>
 
+    <string-array name="fascia_giornata">
+        <item>mattina</item>
+        <item>pomeriggio</item>
+        <item>sera</item>
+    </string-array>
+
+    <string-array name="sport_filter">
+        <item>Tutti</item>
+        <item>Calcio</item>
+        <item>Basket</item>
+        <item>Tennis</item>
+        <item>Paddle</item>
+    </string-array>
 </resources>

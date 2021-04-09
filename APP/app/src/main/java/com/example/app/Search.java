@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,10 +21,19 @@ public class Search extends AppCompatActivity {
 
     int images[] = {R.drawable.ic_item_soccer, R.drawable.ic_item_tennis, R.drawable.ic_item_paddle, R.drawable.ic_item_basket};
 
+    Spinner filterBy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        filterBy = findViewById(R.id.filterBy);
+
+        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
+                R.array.sport_filter, android.R.layout.simple_spinner_item);
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        filterBy.setAdapter(adapter5);
 
         recycle = findViewById(R.id.recyclerView);
 
@@ -59,5 +70,7 @@ public class Search extends AppCompatActivity {
                 return false;
             }
         });
+
+
     }
 }

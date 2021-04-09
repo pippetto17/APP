@@ -1,9 +1,11 @@
 package com.example.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +44,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.creator_name.setText(data1[position]);
         holder.creator_mod.setText(data2[position]);
         holder.myImage.setImageResource(images[position]);
+
+        holder.buttonItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(context, AdvertS.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -53,6 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         TextView creator_name, creator_mod;
         ImageView myImage;
+        Button buttonItem;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +71,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             creator_name = itemView.findViewById(R.id.textViewName);
             creator_mod = itemView.findViewById(R.id.textViewMod);
             myImage = itemView.findViewById(R.id.imageView);
+
+            buttonItem = itemView.findViewById(R.id.buttonItem);
         }
     }
 }
