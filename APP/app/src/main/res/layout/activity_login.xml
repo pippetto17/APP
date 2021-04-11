@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/bg_login"
+        android:background="@drawable/def_wallpaper_login"
         android:maxHeight="550dp"
         android:minHeight="350dp"
         app:layout_constraintBottom_toBottomOf="@id/guide1"
@@ -77,6 +77,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/email"
@@ -92,7 +93,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textEmailAddress" />
@@ -106,9 +107,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="52dp"
         android:layout_marginEnd="52dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guide4"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/password"
@@ -116,6 +115,9 @@
         android:textColor="?attr/colorSecondaryVariant"
         android:textColorHint="?attr/colorSecondaryVariant"
         app:counterEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide4"
         app:passwordToggleEnabled="true">
 
 
@@ -125,7 +127,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:ems="10"
             android:inputType="textPassword" />
 
@@ -136,11 +138,12 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:contentDescription="@string/todo"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sporty_logo_name" />
+        app:srcCompat="@drawable/app_name_logo" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/buttonLogin"
@@ -182,8 +185,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/credit"

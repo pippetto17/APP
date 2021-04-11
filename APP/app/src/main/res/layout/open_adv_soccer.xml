@@ -47,23 +47,34 @@
 
         </androidx.cardview.widget.CardView>
 
-        <ImageButton
+        <androidx.cardview.widget.CardView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/round_button"
+            android:background="@color/white"
             android:elevation="3dp"
+            app:cardCornerRadius="50dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_commenting" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ToggleButton
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="105dp"
-            android:background="@drawable/round_button_2"
-            android:elevation="3dp"
+            android:background="@drawable/toggle_fav"
+            android:textOff=" "
+            android:textOn=" "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +94,7 @@
             android:layout_marginTop="308dp"
             android:text="30 anni"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -95,9 +106,9 @@
             android:layout_marginTop="338dp"
             android:lines="2"
             android:text="@string/tizio_caio"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,7 +118,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="420dp"
             android:text="Calcio a 8"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,7 +129,7 @@
             android:layout_marginTop="420dp"
             android:layout_marginEnd="20dp"
             android:text="08/04/2021"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -128,38 +139,61 @@
             android:layout_height="30dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="460dp"
-            android:text="Pomeriggio e Sera"
-            android:textColor="@color/black"
+            android:text="Pomeriggio "
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="520dp"
+            android:layout_marginEnd="17dp"
+            android:background="#939393"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:text="Informazioni"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <TextView
+            android:id="@+id/informazioni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:paddingBottom="30dp"
-            app:cardCornerRadius="20dp"
-            android:backgroundTint="@color/black"
+            android:layout_marginTop="535dp"
+            android:inputType="textMultiLine"
+            android:lines="12"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato."
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:inputType="textMultiLine"
-                android:lines="20"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum."
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="50dp"
+            android:background="#939393"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/informazioni" />
 
-        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

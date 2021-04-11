@@ -24,7 +24,7 @@ public class MyappIntro extends AppIntro2 {
 
         addSlide(AppIntroFragment.newInstance("Pagina 1", "pagina uno dove si vede il login", R.drawable.login, ContextCompat.getColor(getApplicationContext(),R.color.green_sporty)));
         addSlide(AppIntroFragment.newInstance("Pagina 2", "pagina due dove si vede la registrazione", R.drawable.signup, ContextCompat.getColor(getApplicationContext(),R.color.green_500)));
-        addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.choose, ContextCompat.getColor(getApplicationContext(),R.color.purple_700)));
+        addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.def_wallpaper, ContextCompat.getColor(getApplicationContext(),R.color.purple_700)));
 
         // Fade Transition
         setTransformer(AppIntroPageTransformerType.Fade.INSTANCE);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dark_wallpaper"
+    android:background="@drawable/def_wallpaper"
     android:paddingStart="40dp"
     android:paddingEnd="40dp"
     tools:context=".SignUp">
@@ -15,9 +15,9 @@
         android:layout_marginBottom="40dp"
         android:backgroundTint="?attr/colorOnPrimarySurface"
         app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/guide11">
 
         <TextView
@@ -42,24 +42,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/guide12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide12"
-        app:layout_constraintTop_toTopOf="@id/guide13"/>
+        app:layout_constraintTop_toTopOf="@id/guide13" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageSelected"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/user_image"
         android:src="@drawable/ic_user"
+        app:layout_constraintBottom_toBottomOf="@id/guide12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide12"
-        app:layout_constraintTop_toTopOf="@id/guide13"/>
+        app:layout_constraintTop_toTopOf="@id/guide13" />
 
     <TextView
         android:id="@+id/helpText"
@@ -77,14 +76,15 @@
         android:id="@+id/nome_cover"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/nome"
         android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="@id/guide10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide10">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/nome"
@@ -92,7 +92,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -103,14 +103,15 @@
         android:id="@+id/cognome_cover"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/cognome"
         android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="@id/guide9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide9">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/cognome"
@@ -118,7 +119,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -129,14 +130,15 @@
         android:id="@+id/email_cover"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/email"
         android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="@id/guide8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide8">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/emailReg"
@@ -144,7 +146,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textEmailAddress" />
@@ -155,14 +157,15 @@
         android:id="@+id/eta_cover"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/eta"
         android:textColorHint="?attr/colorSecondaryVariant"
+        app:layout_constraintBottom_toBottomOf="@id/guide7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guide7">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/eta"
@@ -170,7 +173,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="number" />
@@ -181,15 +184,16 @@
         android:id="@+id/password_cover_reg"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/password"
         android:textColorHint="?attr/colorSecondaryVariant"
         app:counterEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/guide6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/guide6"
         app:passwordToggleEnabled="true">
 
         <EditText
@@ -198,7 +202,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textPassword" />
@@ -209,15 +213,16 @@
         android:id="@+id/password_confirm_cover"
         android:layout_width="260dp"
         android:layout_height="50dp"
+        android:background="@drawable/box_text"
         android:elevation="2dp"
         android:ems="10"
         android:hint="@string/conferma_password"
         android:textColorHint="?attr/colorSecondaryVariant"
         app:counterEnabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/guide5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/guide5"
         app:passwordToggleEnabled="true">
 
         <EditText
@@ -226,7 +231,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:autofillHints=""
-            android:background="@drawable/box_embed"
+            android:background="@color/trasparent"
             android:elevation="2dp"
             android:ems="10"
             android:inputType="textPassword" />
@@ -240,10 +245,10 @@
         android:layout_marginBottom="12dp"
         app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"

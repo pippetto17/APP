@@ -37,10 +37,14 @@
     <string name="crea_annuncio">CREA ANNUNCIO</string>
 
     <string-array name="nome">
-        <item>Filippo Carletti</item> //calcio
-        <item>Luca Orlandi</item> //tennis
-        <item>Lorenzo Donadio</item> //paddle
-        <item>Andrea Fraschetti</item> //basket
+        <item>Filippo Carletti</item>
+        //calcio
+        <item>Luca Orlandi</item>
+        //tennis
+        <item>Lorenzo Donadio</item>
+        //paddle
+        <item>Andrea Fraschetti</item>
+        //basket
     </string-array>
 
     <string-array name="modalita">
@@ -49,5 +53,7 @@
         <item>doppio</item>
         <item>5</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

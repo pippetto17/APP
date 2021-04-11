@@ -3,10 +3,10 @@
     <style name="Theme.APP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/green_500</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#000000</item>
+        <item name="colorSecondary">@color/black</item>
         <item name="colorSecondaryVariant">@color/black</item>
         <item name="colorOnSecondary">@color/black</item>
         <item name="colorOnPrimarySurface">@color/white</item>
@@ -14,6 +14,7 @@
         <item name="colorSurface">#EBEBEB</item>
         <item name="colorOnSurface">@color/white</item>
         <item name="color">@color/white</item>
+        <item name="colorOnBackground">#EBEBEB</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->

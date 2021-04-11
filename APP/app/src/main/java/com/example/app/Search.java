@@ -5,15 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Search extends AppCompatActivity {
+public class Search extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     RecyclerView recycle;
 
@@ -30,10 +38,10 @@ public class Search extends AppCompatActivity {
 
         filterBy = findViewById(R.id.filterBy);
 
-        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
-                R.array.sport_filter, android.R.layout.simple_spinner_item);
-        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        filterBy.setAdapter(adapter5);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.sport_filter, R.layout.color_spinner_layout);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        filterBy.setAdapter(adapter);
+        filterBy.setOnItemSelectedListener(this);
 
         recycle = findViewById(R.id.recyclerView);
 
@@ -71,6 +79,15 @@ public class Search extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

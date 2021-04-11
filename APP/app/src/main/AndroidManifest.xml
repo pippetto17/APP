@@ -32,15 +32,6 @@
         <activity android:name=".AdvertS" android:label="Sporty"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".AdvertT" android:label="Sporty"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".AdvertB" android:label="Sporty"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".AdvertP" android:label="Sporty"
-            android:screenOrientation="portrait"/>
-
         <activity android:name=".MyappIntro"
             android:label="Sporty"
             android:screenOrientation="portrait"
@@ -79,9 +70,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
