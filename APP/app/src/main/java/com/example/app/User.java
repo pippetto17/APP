@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -20,6 +22,9 @@ public class User extends AppCompatActivity {
 
     private TextView logout;
     Dialog dialog;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +48,7 @@ public class User extends AppCompatActivity {
             public void onClick(View v) {
 
                 //AGGIUNGI QUA IL CODICE PER LA RIMOZIONE DEI DATI DELL'APP
-
-
-                Toast.makeText(User.this, "Logout", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+                userLogOut();
             }
         });
 
@@ -93,5 +95,23 @@ public class User extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void userLogOut() {
+
+        //Reset shared prefrences
+        sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        //Messaggio di logout
+        Toast.makeText(User.this, "Logout", Toast.LENGTH_SHORT).show();
+        dialog.dismiss();
+
+        //Apertura pagina di login
+        Intent intent = new Intent (User.this, Login.class);
+        startActivity(intent);
+        return;
     }
 }

@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
                             if (result.equals("Login riuscito")) {
-                                Toast.makeText(Login.this, result , Toast.LENGTH_LONG).show();
+                                Toast.makeText(Login.this, result , Toast.LENGTH_SHORT).show();
 
 
                                 //Scrive le shared prefrences
