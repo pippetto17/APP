@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -45,10 +46,15 @@ public class SignUp extends AppCompatActivity {
     Button buttonImage;
     CircleImageView img;
     TextView helpText;
+    Uri imagePath = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Window window = getWindow();
+        window.setBackgroundDrawableResource(R.drawable.def_wallpaper);
+
         setContentView(R.layout.activity_sign_up);
 
         EditTextName = findViewById(R.id.nome);
@@ -78,13 +84,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nome, cognome, eta, email, password;
+                String nome, cognome, eta, email, password, imageuri;
                 nome = String.valueOf(EditTextName.getText());
                 cognome = String.valueOf(EditTextSurname.getText());
                 eta = String.valueOf(EditTextEta.getText());
                 email = String.valueOf(EditTextEmail.getText()).toLowerCase();
                 password = String.valueOf(EditTextPassword.getText());
-
+                imageuri = imagePath.toString();
 
                 if (!nome.isEmpty() && !cognome.isEmpty() && !eta.isEmpty() && !password.isEmpty() && !email.isEmpty()) {
                     Handler handler = new Handler(Looper.getMainLooper());
@@ -92,19 +98,22 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            String[] field = new String[5];
-                            field[0] = "nome";
-                            field[1] = "cognome";
-                            field[2] = "eta";
-                            field[3] = "email";
-                            field[4] = "password";
+                            String[] field = new String[6];
+                            field[0] = "image";
+                            field[1] = "nome";
+                            field[2] = "cognome";
+                            field[3] = "eta";
+                            field[4] = "email";
+                            field[5] = "password";
 
-                            String[] data = new String[5];
-                            data[0] = nome;
-                            data[1] = cognome;
-                            data[2] = eta;
-                            data[3] = email;
-                            data[4] = password;
+
+                            String[] data = new String[6];
+                            data[0] = imageuri;
+                            data[1] = nome;
+                            data[2] = cognome;
+                            data[3] = eta;
+                            data[4] = email;
+                            data[5] = password;
                             PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/signup.php", "POST", field, data);
 
                             if (putData.startPut()) {
@@ -139,6 +148,8 @@ public class SignUp extends AppCompatActivity {
 
             if (resultCode == RESULT_OK) {
                 img.setImageURI(result.getUri());
+
+                 imagePath = result.getUri();
 
                 helpText.setVisibility(View.GONE);
                 Toast.makeText(

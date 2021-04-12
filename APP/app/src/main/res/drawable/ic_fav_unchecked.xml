@@ -14,10 +14,10 @@
             android:pathData="M0,0h300v300h-300z"/>
         <path
             android:pathData="M150,150m-150,0a150,150 0,1 1,300 0a150,150 0,1 1,-300 0"
-            android:fillColor="#FFFFFF"/>
+            android:fillColor="?attr/color"/>
         <path
             android:pathData="M204,54L96,54C86.059,54 78,62.059 78,72L78,246L150,204L222,246L222,72C222,62.059 213.941,54 204,54ZM204,214.661L150,183.161L96,214.661L96,74.25C96,73.007 97.007,72 98.25,72L201.75,72C202.993,72 204,73.006 204,74.248L204,214.661Z"
-            android:fillColor="#000000"/>
+            android:fillColor="?attr/colorPrimary"/>
       </group>
     </group>
   </group>

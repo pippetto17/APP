@@ -10,26 +10,26 @@
         android:id="@+id/filters"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:backgroundTint="#000000"
+        android:backgroundTint="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_map_marker"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="25dp"
+            android:src="@drawable/ic_map_marker" />
 
         <Spinner
-            android:background="@null"
             android:id="@+id/filterBy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/sport_filter"
             android:layout_gravity="end|center_vertical"
-            android:popupBackground="@drawable/spinner_dropdown_color"/>
+            android:background="@null"
+            android:entries="@array/sport_filter"
+            android:popupBackground="@drawable/spinner_dropdown_color" />
 
     </androidx.cardview.widget.CardView>
 
@@ -53,15 +53,20 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorControlNormal"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/black"
+        app:itemBackground="?attr/colorOnSurface"
         app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/app_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

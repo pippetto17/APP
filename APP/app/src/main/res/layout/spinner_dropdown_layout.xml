@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:text="Filippo"
-    android:textColor="@color/white"
+    android:textColor="#989898"
     android:textSize="22sp">
 
 </TextView>

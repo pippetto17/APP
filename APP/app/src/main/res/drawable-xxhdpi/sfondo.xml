@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape >
+            <solid
+
+                android:color="?attr/colorOnSurface"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/def_wallpaper_add" android:top="0dp" />
+</layer-list>

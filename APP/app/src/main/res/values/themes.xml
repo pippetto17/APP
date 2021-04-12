@@ -15,8 +15,10 @@
         <item name="colorOnSurface">@color/white</item>
         <item name="color">@color/white</item>
         <item name="colorOnBackground">#EBEBEB</item>
+        <item name="colorControlNormal">#EFEFEF</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/trasparent</item>
+        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
     </style>
 
