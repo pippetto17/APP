@@ -33,6 +33,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,6 +48,7 @@ public class SignUp extends AppCompatActivity {
     CircleImageView img;
     TextView helpText;
     Uri imagePath = null;
+    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +152,14 @@ public class SignUp extends AppCompatActivity {
                 img.setImageURI(result.getUri());
 
                  imagePath = result.getUri();
+
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imagePath);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                
 
                 helpText.setVisibility(View.GONE);
                 Toast.makeText(
