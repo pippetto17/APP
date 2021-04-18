@@ -130,8 +130,9 @@ public class SignUp extends AppCompatActivity {
                             }
                         }
                     });
-                } else {
-                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campiooo", Toast.LENGTH_SHORT).show();
                 }
             }
         });

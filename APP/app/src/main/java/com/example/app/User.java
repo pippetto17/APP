@@ -22,6 +22,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.app.Match.Match;
+import com.example.app.Match.SplitData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -69,7 +71,10 @@ public class User extends AppCompatActivity {
 
                         citta_match.setText(result);
                         //End ProgressBar (Set visibility to GONE)
-                        Log.i("FetchData", result);
+
+                        //TUTTI I MATCH RECUPERATI VENGONO IMMESSI IN QUESTO ARRAY
+                        Match[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
+
                     }
                 }
             }

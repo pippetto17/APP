@@ -136,8 +136,8 @@ public class MatchActivity extends AppCompatActivity {
                 String citta, modalita,fascia_oraria, info_box;
 
 
-                fascia_oraria = Ora.getItemAtPosition(0).toString().trim();
-                modalita = Mod.getItemAtPosition(0).toString().trim();
+                fascia_oraria = Ora.getSelectedItem().toString().trim();
+                modalita = Mod.getSelectedItem().toString().trim();
 
                 info_box = String.valueOf(EditInfo.getText());
                 citta = String.valueOf(EditCity.getText());
@@ -153,21 +153,23 @@ public class MatchActivity extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            String[] field = new String[6];
+                            String[] field = new String[7];
                             field[0] = "giorno";
-                            field[1] = "citta";
-                            field[2] = "modalita";
-                            field[3] = "email_match";
-                            field[4] = "info";
-                            field[5] = "sport";
+                            field[1] = "fascia_oraria";
+                            field[2] = "citta";
+                            field[3] = "modalita";
+                            field[4] = "email_match";
+                            field[5] = "info";
+                            field[6] = "sport";
 
-                            String[] data = new String[6];
+                            String[] data = new String[7];
                             data[0] = giorno;
-                            data[1] = citta;
-                            data[2] = modalita;
-                            data[3] = email;
-                            data[4] = info_box;
-                            data[5] = choosedSport;
+                            data[1] = fascia_oraria;
+                            data[2] = citta;
+                            data[3] = modalita;
+                            data[4] = email;
+                            data[5] = info_box;
+                            data[6] = choosedSport;
                             PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/createMatch.php", "POST", field, data);
 
                             if (putData.startPut()) {
