@@ -2,15 +2,16 @@ package com.example.app.Match;
 
 public class Match {
 
-    String citta;
-    String modalita;
     String giorno;
+    String fascia_oraria;
+    String citta;
+
 
     public Match(){}
 
-    public Match(String citta, String modalita, String giorno) {
-        this.citta = citta;
-        this.modalita = modalita;
+    public Match(String giorno, String fascia_oraria, String citta) {
         this.giorno = giorno;
+        this.fascia_oraria = fascia_oraria;
+        this.citta = citta;
     }
 }

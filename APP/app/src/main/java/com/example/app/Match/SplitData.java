@@ -11,16 +11,16 @@ public interface SplitData {
         Match[] arrayMatchesWithInfo = new Match[arrayMatches.length];
 
         //Array di appoggio per la separazione delle info
-        String[] info;
+        String[] infos;
 
         //Divide i campi di ogni singolo match
         for(int i = 0; i < arrayMatches.length; i++){
 
             //Divide le info del match
-            info = arrayMatches[i].split("\\*");
+            infos = arrayMatches[i].split("\\*");
 
-            //Istanzia un nuovo match e lo aggiungfe all'array
-            arrayMatchesWithInfo[i] = new Match(info[0], info[1], info[2]);
+            //Istanzia un nuovo match e lo aggiunge all'array
+            arrayMatchesWithInfo[i] = new Match(infos[0], infos[1], infos[2]);
 
         }
 

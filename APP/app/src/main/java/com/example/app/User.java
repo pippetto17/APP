@@ -55,8 +55,8 @@ public class User extends AppCompatActivity {
 
         // QUI IL FETCH DATA PRENDE LA STRINGA CHE RICHIEDO CHE CONTIENE QUESTI 3 VALORI QUA SOTTO
         citta_match = findViewById(R.id.citta_match);
-        modalita_match = findViewById(R.id.modalita_match);
-        giorno_match = findViewById(R.id.giorno_match);
+        /*modalita_match = findViewById(R.id.modalita_match);
+        giorno_match = findViewById(R.id.giorno_match);*/
 
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
@@ -70,10 +70,9 @@ public class User extends AppCompatActivity {
                         String result = fetchData.getResult();
 
                         citta_match.setText(result);
-                        //End ProgressBar (Set visibility to GONE)
 
                         //TUTTI I MATCH RECUPERATI VENGONO IMMESSI IN QUESTO ARRAY
-                        Match[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
+                        //Match[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
 
                     }
                 }
