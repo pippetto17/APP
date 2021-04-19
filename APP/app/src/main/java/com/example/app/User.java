@@ -58,26 +58,6 @@ public class User extends AppCompatActivity {
         /*modalita_match = findViewById(R.id.modalita_match);
         giorno_match = findViewById(R.id.giorno_match);*/
 
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                FetchData fetchData = new FetchData("http://93.43.208.27/carletti/sportydb/ItemSoccer.php");
-                if (fetchData.startFetch()) {
-                    if (fetchData.onComplete()) {
-
-                        //QUI RESTITUITO IL RESULT LO PASSO A STRINGA E IN QUESTO CASO LO SETTO INTEGRALMENTE A CITTA_MATCH
-                        String result = fetchData.getResult();
-
-                        citta_match.setText(result);
-
-                        //TUTTI I MATCH RECUPERATI VENGONO IMMESSI IN QUESTO ARRAY
-                        //Match[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
-
-                    }
-                }
-            }
-        });
 
         dialog1 = new Dialog(User.this);
         dialog1.setContentView(R.layout.logout_dialog);

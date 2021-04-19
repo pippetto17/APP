@@ -27,8 +27,8 @@
     </string-array>
 
     <string-array name="sport_filter">
-        <item>Calcio</item>
         <item>Basket</item>
+        <item>Calcio</item>
         <item>Tennis</item>
         <item>Paddle</item>
     </string-array>
