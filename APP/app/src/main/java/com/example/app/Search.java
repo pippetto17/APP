@@ -49,6 +49,8 @@ public class Search extends AppCompatActivity {
         Window window = getWindow();
         window.setBackgroundDrawableResource(R.drawable.search_wallpaper);
 
+        setListStyle();
+
         filterBy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
