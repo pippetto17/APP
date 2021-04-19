@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="15dp"
-    android:paddingBottom="15dp">
+    android:paddingTop="15dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         app:cardCornerRadius="12dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="?attr/colorBackgroundFloating"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="350dp"
             android:layout_height="250dp"
-            android:backgroundTint="#00FFFFFF"/>
+            android:backgroundTint="#00FFFFFF" />
 
         <ImageView
             android:id="@+id/backgroundItem"
@@ -35,35 +35,104 @@
             app:srcCompat="@drawable/ic_item_basket" />
 
         <TextView
-            android:id="@+id/giornoT"
+            android:id="@+id/nomeCognomeT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:maxWidth="280dp"
+            android:maxHeight="80dp"
+            android:text="Filippo Carletti"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="95dp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="30sp"/>
 
-        <TextView
-            android:id="@+id/fasciaT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Modalità"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="150dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageCreator"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_user"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="95dp"
+            android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/cittaT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="180dp"
-            android:text="Modalità"
+            android:layout_marginTop="145dp"
+            android:text="Città"
             android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/modalitaTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="180dp"
+            android:text="Modalità:"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/modalitaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="180dp"
+            android:text="singolo"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/etaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19"
+            android:textStyle="bold"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom"/>
+
+        <TextView
+            android:id="@+id/etaTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anni"
+            android:textStyle="bold"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom"/>
+
+        <TextView
+            android:id="@+id/fasciaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fascia Oraria"
+            android:hint="prova"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="180dp"
+            android:layout_gravity="end" />
+
+        <TextView
+            android:id="@+id/giornoT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            android:text="24/03/2021"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
