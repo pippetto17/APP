@@ -48,9 +48,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         MatchModel matchListModel = matchList.get(position);
 
         //Set campi e immagine di sfondo
-        holder.giorno.setText(matchListModel.getGiorno());
-        holder.fasciaOraria.setText(matchListModel.getFascia_oraria());
-        holder.citta.setText(matchListModel.getCitta());
+        holder.giorno.setText(matchListModel.giorno);
+        holder.fasciaOraria.setText(matchListModel.fasciaOraria);
+        holder.citta.setText(matchListModel.citta);
+        holder.modalita.setText(matchListModel.modalita);
+        holder.nomeCognome.setText(matchListModel.nomeCognomeCreatore);
+        holder.eta.setText(matchListModel.eta);
 
         switch (choosedSport) {
             case "Calcio":
@@ -77,9 +80,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView giorno, citta, fasciaOraria;
+        TextView giorno, citta, fasciaOraria, eta, modalita, nomeCognome;
         ImageView bgItem;
-        ImageView myImage;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +89,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             citta = itemView.findViewById(R.id.cittaT);
             fasciaOraria = itemView.findViewById(R.id.fasciaT);
             giorno = itemView.findViewById(R.id.giornoT);
+            eta = itemView.findViewById(R.id.etaT);
+            modalita = itemView.findViewById(R.id.modalitaT);
+            nomeCognome = itemView.findViewById(R.id.nomeCognomeT);
             bgItem = itemView.findViewById(R.id.backgroundItem);
 
         }

@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -143,15 +141,20 @@ public class Search extends AppCompatActivity {
                 if(!result.isEmpty()){
 
                     //Array match recuperati
-                    Match[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
+                    MatchModel[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
 
                     //Istanziamneto item nella recycleView per ogni match caricato
                     for(int i = 0; i < ArrayMatchRecuperati.length; i++){
 
                         MatchModel Model = new MatchModel();
-                        Model.setGiorno(ArrayMatchRecuperati[i].giorno);
-                        Model.setCitta(ArrayMatchRecuperati[i].citta);
-                        Model.setFascia_oraria(ArrayMatchRecuperati[i].fascia_oraria);
+                        Model.giorno = ArrayMatchRecuperati[i].giorno;
+                        Model.citta = ArrayMatchRecuperati[i].citta;
+                        Model.fasciaOraria = ArrayMatchRecuperati[i].fasciaOraria;
+                        Model.emailCreatore = ArrayMatchRecuperati[i].emailCreatore;
+                        Model.nomeCognomeCreatore = ArrayMatchRecuperati[i].nomeCognomeCreatore;
+                        Model.info = ArrayMatchRecuperati[i].info;
+                        Model.modalita = ArrayMatchRecuperati[i].modalita;
+                        Model.eta = ArrayMatchRecuperati[i].eta;
                         list.add(Model);
                     }
 

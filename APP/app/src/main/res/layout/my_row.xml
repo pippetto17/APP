@@ -47,15 +47,6 @@
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="30sp"/>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageCreator"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_user"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="95dp"
-            android:layout_gravity="end" />
-
         <TextView
             android:id="@+id/cittaT"
             android:layout_width="wrap_content"
@@ -64,8 +55,7 @@
             android:layout_marginTop="145dp"
             android:text="Città"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/modalitaTS"
@@ -75,8 +65,7 @@
             android:layout_marginTop="180dp"
             android:text="Modalità:"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/modalitaT"
@@ -86,15 +75,13 @@
             android:layout_marginTop="180dp"
             android:text="singolo"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/etaT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="19"
-            android:textStyle="bold"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:layout_margin="10dp"
@@ -105,7 +92,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Anni"
-            android:textStyle="bold"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:layout_marginStart="40dp"
@@ -120,7 +106,6 @@
             android:hint="prova"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="180dp"
             android:layout_gravity="end" />
