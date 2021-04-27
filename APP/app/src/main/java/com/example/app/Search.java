@@ -182,4 +182,13 @@ public class Search extends AppCompatActivity {
         matchAdapter = new MyAdapter(this, list, filterBy.getSelectedItem().toString().trim());
         recycle.setAdapter(matchAdapter);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(Search.this, Search.class));
+        finish();
+
+    }
 }

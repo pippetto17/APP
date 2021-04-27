@@ -100,4 +100,13 @@ public class Add extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(Add.this, Search.class));
+        finish();
+
+    }
 }

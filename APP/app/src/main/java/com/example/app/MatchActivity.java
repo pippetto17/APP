@@ -147,6 +147,8 @@ public class MatchActivity extends AppCompatActivity {
                 String email = sharedPreferences.getString("emailLogin", "");
 
 
+
+
                 if (!choosedSport.isEmpty() && !citta.isEmpty() && !fascia_oraria.isEmpty() && !modalita.isEmpty() && !info_box.isEmpty() && !email.isEmpty() && !giorno.isEmpty()) {
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {

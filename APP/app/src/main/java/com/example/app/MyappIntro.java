@@ -22,23 +22,22 @@ public class MyappIntro extends AppIntro2 {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addSlide(AppIntroFragment.newInstance("Pagina 1", "pagina uno dove si vede il login", R.drawable.login, ContextCompat.getColor(getApplicationContext(),R.color.green_sporty)));
-        addSlide(AppIntroFragment.newInstance("Pagina 2", "pagina due dove si vede la registrazione", R.drawable.signup, ContextCompat.getColor(getApplicationContext(),R.color.green_500)));
-        addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.def_wallpaper, ContextCompat.getColor(getApplicationContext(),R.color.purple_700)));
-
-        // Fade Transition
-        setTransformer(AppIntroPageTransformerType.Fade.INSTANCE);
-
-        sharedPreferences = getApplicationContext().getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        if(sharedPreferences != null){
-            boolean checkShared = sharedPreferences.getBoolean("checkStated", false);
+        String showIntro = sharedPreferences.getString("firstAccess", "");
 
-            if (checkShared == true) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
-            }
+        if (showIntro.isEmpty()) {
+            addSlide(AppIntroFragment.newInstance("Pagina 1", "pagina uno dove si vede il login", R.drawable.login, ContextCompat.getColor(getApplicationContext(),R.color.green_sporty)));
+            addSlide(AppIntroFragment.newInstance("Pagina 2", "pagina due dove si vede la registrazione", R.drawable.signup, ContextCompat.getColor(getApplicationContext(),R.color.green_500)));
+            addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.def_wallpaper, ContextCompat.getColor(getApplicationContext(),R.color.purple_700)));
+
+            // Fade Transition
+            setTransformer(AppIntroPageTransformerType.Fade.INSTANCE);
+        }
+        else{
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
     }
 
@@ -46,7 +45,7 @@ public class MyappIntro extends AppIntro2 {
     protected void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        editor.putBoolean("checkStated", false).commit();
+        editor.putString("firstAccess", "false").commit();
         finish();
     }
 
@@ -54,7 +53,7 @@ public class MyappIntro extends AppIntro2 {
     protected void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        editor.putBoolean("checkStated", true).commit();
+        editor.putString("firstAccess", "false").commit();
         finish();
     }
 }

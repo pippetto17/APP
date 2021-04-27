@@ -58,9 +58,9 @@
         android:textColorHint="?attr/colorSecondaryVariant"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/guide16"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guide19"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide18"
         app:layout_constraintTop_toBottomOf="@+id/info_text" />
 
     <Spinner
@@ -72,9 +72,9 @@
         android:elevation="2dp"
         android:ems="10"
         android:popupBackground="@drawable/rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guide19"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide18"
         app:layout_constraintTop_toBottomOf="@id/fascia_text" />
 
     <Spinner
@@ -86,9 +86,9 @@
         android:elevation="2dp"
         android:ems="10"
         android:popupBackground="@drawable/rounded_corner"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guide19"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guide18"
         app:layout_constraintTop_toBottomOf="@id/mod_text" />
 
     <TextView
@@ -101,8 +101,8 @@
         android:textColor="?attr/colorSecondaryVariant"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/city_field"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="@id/guide19"
+        app:layout_constraintStart_toStartOf="@id/guide18"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -256,11 +256,31 @@
         app:layout_constraintGuide_percent="0.875" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.117" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.117" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

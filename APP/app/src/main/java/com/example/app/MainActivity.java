@@ -1,4 +1,5 @@
 package com.example.app;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +28,14 @@ public class MainActivity extends AppCompatActivity {
             //Connessione disponibile
 
             //Legge le shared preferences dal file di testo
-            sharedPreferences  = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+            sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
             String email = sharedPreferences.getString("emailLogin", "");
             String password = sharedPreferences.getString("passwordLogin", "");
 
-            if(!email.isEmpty() && !password.isEmpty())
-            {
+            if (!email.isEmpty() && !password.isEmpty()) {
                 //Viene effettuato il login automatico se dovessero essere presenti le credenziali
                 userLogin(email, password);
-            }
-            else {
+            } else {
 
                 //Apre la schermata di login
                 Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -43,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
 
-        }
-        else {
+        } else {
             // Connessione assente
             setContentView(R.layout.offline);
             return;
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void userLogin(String email, String password){
+    public void userLogin(String email, String password) {
 
         if (!email.isEmpty() && !password.isEmpty()) {
             Handler handler = new Handler(Looper.getMainLooper());
@@ -73,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
                             if (result.equals("Login riuscito")) {
-                                Toast.makeText(MainActivity.this, "Bentornato" , Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "Bentornato", Toast.LENGTH_LONG).show();
 
-                                Intent intent = new Intent (MainActivity.this, Search.class);
+                                Intent intent = new Intent(MainActivity.this, Search.class);
                                 startActivity(intent);
 
                             } else {
@@ -92,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Controlla la connessione internet del dispositivo
+     *
      * @return restituisce FALSE se il device non è collegato ad una frete internet
      */
     public static boolean controlloConnessione(Context context) {
