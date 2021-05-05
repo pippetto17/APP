@@ -35,13 +35,12 @@ public class Add extends AppCompatActivity {
         tennis = findViewById(R.id.chooseTennis);
 
 
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         soccer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(Add.this, MatchActivity.class);
+                Intent intent = new Intent(Add.this, MatchActivity.class);
                 intent.putExtra("sport_name", "calcio");
                 startActivity(intent);
             }
@@ -50,7 +49,7 @@ public class Add extends AppCompatActivity {
         tennis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(Add.this, MatchActivity.class);
+                Intent intent = new Intent(Add.this, MatchActivity.class);
                 intent.putExtra("sport_name", "tennis");
                 startActivity(intent);
             }
@@ -59,7 +58,7 @@ public class Add extends AppCompatActivity {
         basket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(Add.this, MatchActivity.class);
+                Intent intent = new Intent(Add.this, MatchActivity.class);
                 intent.putExtra("sport_name", "basket");
                 startActivity(intent);
             }
@@ -68,7 +67,7 @@ public class Add extends AppCompatActivity {
         paddle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(Add.this, MatchActivity.class);
+                Intent intent = new Intent(Add.this, MatchActivity.class);
                 intent.putExtra("sport_name", "paddle");
                 startActivity(intent);
             }
@@ -83,6 +82,11 @@ public class Add extends AppCompatActivity {
                 switch (menuitem.getItemId()) {
                     case R.id.navigation_search:
                         startActivity(new Intent(getApplicationContext(), Search.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
+                    case R.id.navigation_fav:
+                        startActivity(new Intent(getApplicationContext(), Fav.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -102,8 +106,7 @@ public class Add extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(Add.this, Search.class));
         finish();

@@ -10,11 +10,12 @@ public class MatchModel {
     public String emailCreatore;
     public String info;
     public String eta;
+    public String idMatch;
 
 
     public MatchModel(){}
 
-    public MatchModel(String nomeCognomeCreatore, String giorno, String fasciaOraria, String citta, String modalita, String emailCreatore, String info, String eta) {
+    public MatchModel(String nomeCognomeCreatore, String giorno, String fasciaOraria, String citta, String modalita, String emailCreatore, String info, String eta, String idMatch) {
         this.nomeCognomeCreatore = nomeCognomeCreatore;
         this.giorno = giorno;
         this.fasciaOraria = fasciaOraria;
@@ -23,5 +24,6 @@ public class MatchModel {
         this.emailCreatore = emailCreatore;
         this.info = info;
         this.eta = eta;
+        this.idMatch = idMatch;
     }
 }

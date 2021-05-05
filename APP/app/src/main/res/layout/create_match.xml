@@ -1,286 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/create_match"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="40dp"
-    android:paddingEnd="40dp"
     tools:context=".MatchActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:backgroundTint="?attr/colorOnPrimarySurface"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/guide13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guide11">
+        android:layout_height="match_parent"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="30dp">
 
-    </androidx.cardview.widget.CardView>
-
-    <EditText
-        android:id="@+id/city_field"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/box_text"
-        android:elevation="2dp"
-        android:ems="10"
-        android:hint="@string/citta2"
-        android:inputType="textMultiLine"
-        android:lines="5"
-        android:padding="10dp"
-        android:textColorHint="?attr/colorSecondaryVariant"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city_text" />
-
-    <EditText
-        android:id="@+id/info_box"
-        android:layout_width="260dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/box_text"
-        android:elevation="2dp"
-        android:ems="10"
-        android:gravity="top"
-        android:hint="Luogo incontro \nInformazioni particolari ..."
-        android:inputType="textMultiLine"
-        android:lines="5"
-        android:padding="10dp"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textColorHint="?attr/colorSecondaryVariant"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/guide16"
-        app:layout_constraintEnd_toEndOf="@id/guide19"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/guide18"
-        app:layout_constraintTop_toBottomOf="@+id/info_text" />
-
-    <Spinner
-        android:id="@+id/fascia_oraria"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/box_text"
-        android:elevation="2dp"
-        android:ems="10"
-        android:popupBackground="@drawable/rounded_corner"
-        app:layout_constraintEnd_toEndOf="@id/guide19"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/guide18"
-        app:layout_constraintTop_toBottomOf="@id/fascia_text" />
-
-    <Spinner
-        android:id="@+id/modalita"
-        android:layout_width="260dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/box_text"
-        android:elevation="2dp"
-        android:ems="10"
-        android:popupBackground="@drawable/rounded_corner"
-        app:layout_constraintEnd_toEndOf="@id/guide19"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@id/guide18"
-        app:layout_constraintTop_toBottomOf="@id/mod_text" />
-
-    <TextView
-        android:id="@+id/info_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:layout_marginTop="20dp"
-        android:text="INFORMAZIONI AGGIUNTIVE"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/city_field"
-        app:layout_constraintEnd_toEndOf="@id/guide19"
-        app:layout_constraintStart_toStartOf="@id/guide18"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:text="@string/creazione_annuncio"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:elevation="2dp"
-        android:hint="@string/data"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textColorHint="?attr/colorSecondaryVariant"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/show_dialog" />
-
-    <TextView
-        android:id="@+id/fascia_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:elevation="3dp"
-        android:text="@string/fascia_oraria"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_text" />
-
-    <TextView
-        android:id="@+id/mod_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:elevation="3dp"
-        android:text="@string/modalit"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fascia_oraria" />
-
-    <TextView
-        android:id="@+id/city_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:elevation="3dp"
-        android:text="@string/città"
-        android:textColor="?attr/colorSecondaryVariant"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modalita" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/show_dialog"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
-        android:textSize="15sp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guide17">
-
-        <RelativeLayout
+        <TextView
+            android:id="@+id/create_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/creazione_annuncio"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/show_dialog"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:textSize="15sp"
+            android:layout_marginTop="40dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_title">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/show_dialogT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/seleziona_data"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/create_match_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorOnPrimarySurface"
+            app:cardCornerRadius="20dp"
+            app:contentPaddingBottom="40dp"
+            app:contentPaddingTop="40dp"
+            android:layout_marginTop="65dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_title">
 
             <TextView
-                android:id="@+id/show_dialogT"
+                android:id="@+id/date_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/seleziona_data"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/create_ad"
-        android:layout_width="260dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="14dp"
-        android:textSize="14sp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guide14">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:hint="@string/data"
+                android:layout_gravity="center_horizontal"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/create_adT"
+                android:id="@+id/fascia_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/crea_annuncio"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                android:elevation="3dp"
+                android:text="@string/fascia_oraria"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textStyle="bold" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+            <Spinner
+                android:id="@+id/fascia_oraria"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/box_text"
+                android:elevation="2dp"
+                android:ems="10"
+                android:popupBackground="@drawable/rounded_corner"
+                android:layout_gravity="center_horizontal"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.945" />
+            <TextView
+                android:id="@+id/mod_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:elevation="3dp"
+                android:text="@string/modalit"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.907" />
+            <Spinner
+                android:id="@+id/modalita"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="185dp"
+                android:background="@drawable/box_text"
+                android:elevation="2dp"
+                android:ems="10"
+                android:popupBackground="@drawable/rounded_corner"
+                android:layout_gravity="center_horizontal"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.875" />
+            <TextView
+                android:id="@+id/city_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:elevation="3dp"
+                android:text="@string/città"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.117" />
+            <EditText
+                android:id="@+id/city_field"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="275dp"
+                android:background="@drawable/box_text"
+                android:elevation="2dp"
+                android:ems="10"
+                android:hint="@string/citta2"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:padding="10dp"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.117" />
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:layout_marginTop="345dp"
+                android:text="INFORMAZIONI AGGIUNTIVE"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
+            <EditText
+                android:id="@+id/info_box"
+                android:layout_width="260dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="385dp"
+                android:background="@drawable/box_text"
+                android:elevation="2dp"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Luogo incontro \nInformazioni particolari ..."
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:padding="10dp"
+                android:textColor="?attr/colorSecondaryVariant"
+                android:textColorHint="?attr/colorSecondaryVariant"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
+        </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/create_ad"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="710dp"
+            android:textSize="14sp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="28dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/create_adT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/crea_annuncio"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,17 +1,26 @@
 package com.example.app.Match;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.app.R;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -20,11 +29,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     ArrayList<MatchModel> matchList;
     Context context;
     String choosedSport;
+    Activity ctx;
+    TextView Nome;
+    TextView Eta;
+    TextView Giorno;
+    TextView Modalita;
+    TextView Fascia;
+    TextView Info;
+    TextView Citta;
+    CardView Banner;
+    ImageView Player;
+    ImageView Ball;
+    ToggleButton SaveButton;
 
-    public MyAdapter(Context pContext, ArrayList<MatchModel> pList, String pChoosedSport) {
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
+    public MyAdapter(Context pContext, ArrayList<MatchModel> pList, String pChoosedSport, Activity activity) {
         this.matchList = pList;
         this.context = pContext;
         this.choosedSport = pChoosedSport;
+        this.ctx=activity;
+
+
     }
 
     public void setChoosedSport(String choosedSport) {
@@ -68,6 +95,87 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 holder.bgItem.setImageResource(R.drawable.ic_item_paddle);
                 break;
         }
+
+
+
+        holder.buttonitem.setOnClickListener(v -> {
+            openItem(matchListModel.nomeCognomeCreatore, matchListModel.eta, matchListModel.giorno, matchListModel.modalita, matchListModel.fasciaOraria, matchListModel.citta, matchListModel.info, matchListModel.idMatch);
+        });
+
+    }
+
+    private void openItem(String nome, String eta, String giorno, String modalita, String fascia, String citta, String info, String idMatch) {
+        DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
+
+        int DeviceTotalWidth = metrics.widthPixels;
+        int DeviceTotalHeight = metrics.heightPixels;
+
+        final Dialog dialog = new Dialog(ctx, android.R.style.Theme_DeviceDefault_NoActionBar_Fullscreen);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.open_adv);
+
+        Nome=dialog.findViewById(R.id.nomeCognomeO);
+        Eta=dialog.findViewById(R.id.etaO);
+        Giorno=dialog.findViewById(R.id.giornoO);
+        Modalita=dialog.findViewById(R.id.modalitaO);
+        Fascia=dialog.findViewById(R.id.fasciaO);
+        Citta=dialog.findViewById(R.id.cittaO);
+        Info=dialog.findViewById(R.id.infoO);
+        Banner=dialog.findViewById(R.id.banner);
+        Player=dialog.findViewById(R.id.playerO);
+        Ball=dialog.findViewById(R.id.ballO);
+        SaveButton=dialog.findViewById(R.id.save_button);
+
+
+        Nome.setText(nome);
+        Eta.setText(eta);
+        Giorno.setText(giorno);
+        Modalita.setText(modalita);
+        Fascia.setText(fascia);
+        Citta.setText(citta);
+        Info.setText(info);
+
+        /*SaveButton.setOnClickListener(v -> {
+            String x = idMatch;
+            x +="$";
+
+            ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+            String email = sharedPreferences.getString("emailLogin", "");
+        });*/
+
+        dialog.getWindow().setLayout(DeviceTotalWidth ,DeviceTotalHeight);
+        dialog.show();
+
+        ImageView back_button = dialog.findViewById(R.id.back_button);
+
+        back_button.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
+
+        switch (choosedSport) {
+            case "Calcio":
+                Banner.setCardBackgroundColor(Color.parseColor("#4BA44A"));
+                Player.setImageResource(R.drawable.ic_player_soccer);
+                Ball.setImageResource(R.drawable.ic_ball_soccer);
+                break;
+
+            case "Tennis":
+                Banner.setCardBackgroundColor(Color.parseColor("#D5762E"));
+                Player.setImageResource(R.drawable.ic_player_tennis);
+                Ball.setImageResource(R.drawable.ic_ball_tennisss);
+                break;
+
+            case "Basket":
+                Banner.setCardBackgroundColor(Color.parseColor("#CA3838"));
+                Player.setImageResource(R.drawable.ic_player_basket);
+                Ball.setImageResource(R.drawable.ic_ball_basket);
+                break;
+            case "Paddle":
+                Banner.setCardBackgroundColor(Color.parseColor("#3333B7"));
+                Player.setImageResource(R.drawable.ic_player_padel);
+                Ball.setImageResource(R.drawable.ic_ball_paddle);
+                break;
+        }
     }
 
     @Override
@@ -79,6 +187,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         TextView giorno, citta, fasciaOraria, eta, modalita, nomeCognome;
         ImageView bgItem;
+        Button buttonitem;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,7 +199,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             modalita = itemView.findViewById(R.id.modalitaT);
             nomeCognome = itemView.findViewById(R.id.nomeCognomeT);
             bgItem = itemView.findViewById(R.id.backgroundItem);
+            buttonitem=itemView.findViewById(R.id.buttonItem);
+
 
         }
     }
+
 }

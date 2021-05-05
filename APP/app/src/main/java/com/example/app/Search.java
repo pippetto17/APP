@@ -82,6 +82,11 @@ public class Search extends AppCompatActivity {
                     case R.id.navigation_search:
                         return true;
 
+                    case R.id.navigation_fav:
+                        startActivity(new Intent(getApplicationContext(), Fav.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
                     case R.id.navigation_add:
                         startActivity(new Intent(getApplicationContext(), Add.class));
                         overridePendingTransition(0, 0);
@@ -103,9 +108,10 @@ public class Search extends AppCompatActivity {
      * Author: Luca Orlandi
      * Carica i dati in base allo sport scelto
      * Viene passato come parametro lo sport
+     *
      * @param sportDaCercare
      */
-    public void loadList( String sportDaCercare ){
+    public void loadList(String sportDaCercare) {
 
         //Url specifico per lo sport
         String urlSport = urlServer;
@@ -138,13 +144,13 @@ public class Search extends AppCompatActivity {
                 //Risultato SELECT
                 String result = fetchData.getResult();
 
-                if(!result.isEmpty()){
+                if (!result.isEmpty()) {
 
                     //Array match recuperati
                     MatchModel[] ArrayMatchRecuperati = SplitData.returnInfoMatch(result);
 
                     //Istanziamneto item nella recycleView per ogni match caricato
-                    for(int i = 0; i < ArrayMatchRecuperati.length; i++){
+                    for (int i = 0; i < ArrayMatchRecuperati.length; i++) {
 
                         MatchModel Model = new MatchModel();
                         Model.giorno = ArrayMatchRecuperati[i].giorno;
@@ -155,13 +161,13 @@ public class Search extends AppCompatActivity {
                         Model.info = ArrayMatchRecuperati[i].info;
                         Model.modalita = ArrayMatchRecuperati[i].modalita;
                         Model.eta = ArrayMatchRecuperati[i].eta;
+                        Model.idMatch = ArrayMatchRecuperati[i].idMatch;
                         list.add(Model);
                     }
 
                     //Notifica l'adapter dei nuovi dati caricati
                     matchAdapter.notifyDataSetChanged();
-                }
-                else{
+                } else {
                     Toast.makeText(Search.this, "Nessun match trovato", Toast.LENGTH_SHORT).show();
                 }
 
@@ -173,19 +179,18 @@ public class Search extends AppCompatActivity {
      * Author: Luca Orlandi
      * Setta lo stile della lista e della recycleView
      */
-    public void setListStyle(){
+    public void setListStyle() {
         filterBy = findViewById(R.id.filterBy);
         recycle = findViewById(R.id.recyclerView);
         recycle.setHasFixedSize(true);
         recycle.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
-        matchAdapter = new MyAdapter(this, list, filterBy.getSelectedItem().toString().trim());
+        matchAdapter = new MyAdapter(this, list, filterBy.getSelectedItem().toString().trim(), this);
         recycle.setAdapter(matchAdapter);
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(Search.this, Search.class));
         finish();

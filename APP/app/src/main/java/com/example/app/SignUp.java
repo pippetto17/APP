@@ -45,7 +45,7 @@ public class SignUp extends AppCompatActivity {
     EditText EditTextName, EditTextSurname, EditTextEta, EditTextEmail, EditTextPassword;
     CardView SignUpButton;
     Button buttonImage;
-    CircleImageView img;
+    ImageView img;
     TextView helpText;
     Uri imagePath = null;
     Bitmap bitmap;
@@ -132,7 +132,7 @@ public class SignUp extends AppCompatActivity {
                     });
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campiooo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
                 }
             }
         });

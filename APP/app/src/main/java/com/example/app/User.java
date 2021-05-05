@@ -35,9 +35,6 @@ public class User extends AppCompatActivity {
 
     private TextView logout;
     private TextView modifica_img;
-    private TextView citta_match;
-    private TextView modalita_match;
-    private TextView giorno_match;
     Dialog dialog1;
     Dialog dialog2;
     CircleImageView img;
@@ -52,12 +49,6 @@ public class User extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         img = findViewById(R.id.U_img_user);
-
-        // QUI IL FETCH DATA PRENDE LA STRINGA CHE RICHIEDO CHE CONTIENE QUESTI 3 VALORI QUA SOTTO
-        citta_match = findViewById(R.id.citta_match);
-        /*modalita_match = findViewById(R.id.modalita_match);
-        giorno_match = findViewById(R.id.giorno_match);*/
-
 
         dialog1 = new Dialog(User.this);
         dialog1.setContentView(R.layout.logout_dialog);
@@ -148,6 +139,11 @@ public class User extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
 
+                    case R.id.navigation_fav:
+                        startActivity(new Intent(getApplicationContext(), Fav.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+
                     case R.id.navigation_add:
                         startActivity(new Intent(getApplicationContext(), Add.class));
                         overridePendingTransition(0, 0);
@@ -201,8 +197,7 @@ public class User extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(User.this, Add.class));
         finish();

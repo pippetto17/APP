@@ -7,6 +7,7 @@
     android:paddingTop="15dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview3"
         android:layout_width="wrap_content"
         android:layout_height="250dp"
         app:cardCornerRadius="12dp"
@@ -17,6 +18,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ToggleButton
+            android:id="@+id/save_button_row"
+            android:layout_width="22dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/toggle_fav_row"
+            android:elevation="4dp"
+            android:textOff=" "
+            android:textOn=" " />
         <Button
             android:id="@+id/buttonItem"
             style="?android:attr/borderlessButtonStyle"
@@ -71,7 +83,7 @@
             android:id="@+id/modalitaT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
+            android:layout_marginStart="105dp"
             android:layout_marginTop="180dp"
             android:text="singolo"
             android:textColor="?attr/colorSecondaryVariant"
@@ -115,7 +127,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
             android:text="24/03/2021"
             android:textColor="@color/black"
             android:textSize="20sp"

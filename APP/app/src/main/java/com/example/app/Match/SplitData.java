@@ -28,6 +28,7 @@ public interface SplitData {
                     , informazioniMatch[5]
                     , informazioniMatch[6]
                     , informazioniMatch[7]
+                    , informazioniMatch[8]
             );
 
         }

@@ -110,4 +110,11 @@ public class Login extends AppCompatActivity {
             Toast.makeText(Login.this, "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
+
+    }
 }

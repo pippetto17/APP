@@ -29,6 +29,10 @@
             android:label="Sporty"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Fav"
+            android:label="Sporty"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".User"
             android:label="Sporty"
             android:screenOrientation="portrait" />
