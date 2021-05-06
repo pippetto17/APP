@@ -3,8 +3,11 @@ package com.example.app.Match;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +16,12 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.example.app.Login;
 import com.example.app.R;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.util.ArrayList;
 
@@ -135,13 +141,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Citta.setText(citta);
         Info.setText(info);
 
-        /*SaveButton.setOnClickListener(v -> {
-            String x = idMatch;
-            x +="$";
+        SaveButton.setOnClickListener(v -> {
 
-            ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
-            String email = sharedPreferences.getString("emailLogin", "");
-        });*/
+            //Recupero id match
+            String idMatchRecuperato = idMatch;
+            idMatchRecuperato +="$";
+
+            //Recupero email
+            sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+            String emailRecuperata = sharedPreferences.getString("emailLogin", "");
+
+            saveMatch(idMatchRecuperato, emailRecuperata);
+
+        });
 
         dialog.getWindow().setLayout(DeviceTotalWidth ,DeviceTotalHeight);
         dialog.show();
@@ -203,6 +215,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
         }
+    }
+
+    public void saveMatch(String idMatchP, String emailP){
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+
+                String[] field = new String[2];
+                field[0] = "id_match";
+                field[1] = "email";
+
+
+                String[] data = new String[2];
+                data[0] = idMatchP;
+                data[1] = emailP;
+                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/saved.php", "POST", field, data);
+
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = putData.getResult();
+                        if (result.equals("Annuncio salvato")) {
+                            Toast.makeText(ctx, result, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ctx, result, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
     }
 
 }

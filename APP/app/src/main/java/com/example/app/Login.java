@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class Login extends AppCompatActivity {
+public class  Login extends AppCompatActivity {
 
 
     EditText EditTextEmail, EditTextPassword;
