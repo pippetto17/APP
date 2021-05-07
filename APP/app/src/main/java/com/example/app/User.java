@@ -8,26 +8,17 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.app.Match.Match;
-import com.example.app.Match.SplitData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
-import com.vishnusivadas.advanced_httpurlconnection.FetchData;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -140,12 +131,12 @@ public class User extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_fav:
-                        startActivity(new Intent(getApplicationContext(), Fav.class));
+                        startActivity(new Intent(getApplicationContext(), FavMatch.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.navigation_add:
-                        startActivity(new Intent(getApplicationContext(), Add.class));
+                        startActivity(new Intent(getApplicationContext(), AddMatch.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -199,7 +190,7 @@ public class User extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(User.this, Add.class));
+        startActivity(new Intent(User.this, AddMatch.class));
         finish();
 
     }

@@ -14,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.app.Match.Match;
 import com.example.app.Match.MatchModel;
 import com.example.app.Match.MyAdapter;
 import com.example.app.Match.SplitData;
@@ -83,12 +82,12 @@ public class Search extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_fav:
-                        startActivity(new Intent(getApplicationContext(), Fav.class));
+                        startActivity(new Intent(getApplicationContext(), FavMatch.class));
                         overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.navigation_add:
-                        startActivity(new Intent(getApplicationContext(), Add.class));
+                        startActivity(new Intent(getApplicationContext(), AddMatch.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -152,17 +151,18 @@ public class Search extends AppCompatActivity {
                     //Istanziamneto item nella recycleView per ogni match caricato
                     for (int i = 0; i < ArrayMatchRecuperati.length; i++) {
 
-                        MatchModel Model = new MatchModel();
-                        Model.giorno = ArrayMatchRecuperati[i].giorno;
-                        Model.citta = ArrayMatchRecuperati[i].citta;
-                        Model.fasciaOraria = ArrayMatchRecuperati[i].fasciaOraria;
-                        Model.emailCreatore = ArrayMatchRecuperati[i].emailCreatore;
-                        Model.nomeCognomeCreatore = ArrayMatchRecuperati[i].nomeCognomeCreatore;
-                        Model.info = ArrayMatchRecuperati[i].info;
-                        Model.modalita = ArrayMatchRecuperati[i].modalita;
-                        Model.eta = ArrayMatchRecuperati[i].eta;
-                        Model.idMatch = ArrayMatchRecuperati[i].idMatch;
-                        list.add(Model);
+                        MatchModel model = new MatchModel();
+                        model.giorno = ArrayMatchRecuperati[i].giorno;
+                        model.citta = ArrayMatchRecuperati[i].citta;
+                        model.fasciaOraria = ArrayMatchRecuperati[i].fasciaOraria;
+                        model.emailCreatore = ArrayMatchRecuperati[i].emailCreatore;
+                        model.nomeCognomeCreatore = ArrayMatchRecuperati[i].nomeCognomeCreatore;
+                        model.info = ArrayMatchRecuperati[i].info;
+                        model.modalita = ArrayMatchRecuperati[i].modalita;
+                        model.eta = ArrayMatchRecuperati[i].eta;
+                        model.idMatch = ArrayMatchRecuperati[i].idMatch;
+                        model.kindSport = ArrayMatchRecuperati[i].kindSport;
+                        list.add(model);
                     }
 
                     //Notifica l'adapter dei nuovi dati caricati

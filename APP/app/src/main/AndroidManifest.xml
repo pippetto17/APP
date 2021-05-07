@@ -25,11 +25,11 @@
             android:label="Sporty"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Add"
+            android:name=".AddMatch"
             android:label="Sporty"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Fav"
+            android:name=".FavMatch"
             android:label="Sporty"
             android:screenOrientation="portrait" />
         <activity

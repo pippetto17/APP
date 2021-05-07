@@ -3,7 +3,6 @@ package com.example.app.Match;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
@@ -19,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.example.app.Login;
 import com.example.app.R;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
@@ -56,9 +54,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.context = pContext;
         this.choosedSport = pChoosedSport;
         this.ctx=activity;
-
-
     }
+
 
     public void setChoosedSport(String choosedSport) {
         this.choosedSport = choosedSport;
@@ -85,19 +82,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.nomeCognome.setText(matchListModel.nomeCognomeCreatore);
         holder.eta.setText(matchListModel.eta);
 
-        switch (choosedSport) {
-            case "Calcio":
+        switch (matchListModel.kindSport) {
+            case "calcio":
                 holder.bgItem.setImageResource(R.drawable.ic_item_soccer);
                 break;
 
-            case "Tennis":
+            case "tennis":
                 holder.bgItem.setImageResource(R.drawable.ic_item_tennis);
                 break;
 
-            case "Basket":
+            case "basket":
                 holder.bgItem.setImageResource(R.drawable.ic_item_basket);
                 break;
-            case "Paddle":
+            case "paddle":
                 holder.bgItem.setImageResource(R.drawable.ic_item_paddle);
                 break;
         }
