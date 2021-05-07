@@ -80,7 +80,6 @@ public class Fav extends AppCompatActivity {
 
     public void requestFavourites (String emailP) {
 
-        //Caricamento dati
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
             @Override
@@ -91,17 +90,12 @@ public class Fav extends AppCompatActivity {
 
                 String[] data = new String[1];
                 data[0] = emailP;
-                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/saveMethod.php", "POST", field, data);
+                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/salvametodo.php ", "POST", field, data);
 
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
                         String result = putData.getResult();
-                        if (result.equals("Login riuscito")) {
-                            Toast.makeText(Fav.this, result, Toast.LENGTH_SHORT).show();
-
-                        } else {
-                            Toast.makeText(Fav.this, result, Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(Fav.this, result , Toast.LENGTH_SHORT).show();
                     }
                 }
             }
