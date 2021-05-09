@@ -107,7 +107,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     }
 
-    private void openItem(String nome, String eta, String giorno, String modalita, String fascia, String citta, String info, String idMatch) {
+    public void openItem(String nome, String eta, String giorno, String modalita, String fascia, String citta, String info, String idMatch) {
         DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
 
         int DeviceTotalWidth = metrics.widthPixels;

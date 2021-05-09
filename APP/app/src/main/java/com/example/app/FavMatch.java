@@ -29,7 +29,7 @@ public class FavMatch extends AppCompatActivity {
 
     //Item recycleView
     RecyclerView recycle;
-    MyPersonalMatchAdapter matchAdapter;
+    public MyPersonalMatchAdapter matchAdapter;
     ArrayList<MatchModel> list;
 
     //Array background
@@ -137,8 +137,9 @@ public class FavMatch extends AppCompatActivity {
 
     public void loadList(String[] array) {
 
+
         //Controlla se c'è almeno un match salvato
-        if(array.length > 0) {
+        if(array.length > 0 && !array[0].isEmpty()) {
 
             //Per ogni match recupera i dati
             for (String f:array) {
