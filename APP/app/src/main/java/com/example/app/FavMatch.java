@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app.Match.MatchModel;
 import com.example.app.Match.MyAdapter;
+import com.example.app.Match.MyPersonalMatchAdapter;
 import com.example.app.Match.SplitData;
 import com.example.app.Match.SplitSavedMatch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,7 +29,7 @@ public class FavMatch extends AppCompatActivity {
 
     //Item recycleView
     RecyclerView recycle;
-    MyAdapter matchAdapter;
+    MyPersonalMatchAdapter matchAdapter;
     ArrayList<MatchModel> list;
 
     //Array background
@@ -95,7 +96,7 @@ public class FavMatch extends AppCompatActivity {
         recycle.setHasFixedSize(true);
         recycle.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
-        matchAdapter = new MyAdapter(this, list, "Calcio", this);
+        matchAdapter = new MyPersonalMatchAdapter(this, list, "Calcio", this);
         recycle.setAdapter(matchAdapter);
     }
 
