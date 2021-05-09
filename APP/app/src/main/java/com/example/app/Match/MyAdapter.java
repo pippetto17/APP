@@ -144,6 +144,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             String idMatchRecuperato = idMatch;
             idMatchRecuperato +="$";
 
+            SaveButton.setChecked(true);
+
             //Recupero email
             sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
             String emailRecuperata = sharedPreferences.getString("emailLogin", "");
@@ -243,5 +245,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             }
         });
     }
-
 }

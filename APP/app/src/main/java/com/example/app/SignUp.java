@@ -44,11 +44,6 @@ public class SignUp extends AppCompatActivity {
 
     EditText EditTextName, EditTextSurname, EditTextEta, EditTextEmail, EditTextPassword;
     CardView SignUpButton;
-    Button buttonImage;
-    ImageView img;
-    TextView helpText;
-    Uri imagePath = null;
-    Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +60,6 @@ public class SignUp extends AppCompatActivity {
         EditTextEmail = findViewById(R.id.emailReg);
         EditTextPassword = findViewById(R.id.passwordReg);
         SignUpButton = findViewById(R.id.SignUpButton);
-        buttonImage = findViewById(R.id.buttonImage);
-        img = findViewById(R.id.imageSelected);
-        helpText = findViewById(R.id.helpText);
-
-        buttonImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .setActivityTitle("Modifica Foto")
-                        .setCropShape(CropImageView.CropShape.OVAL)
-                        .setCropMenuCropButtonTitle("Fatto")
-                        .setFixAspectRatio(true)
-                        .start(SignUp.this);
-            }
-        });
 
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,37 +115,6 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        // handle result of CropImageActivity
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-
-            if (resultCode == RESULT_OK) {
-                img.setImageURI(result.getUri());
-
-                 imagePath = result.getUri();
-
-                try {
-                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imagePath);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                
-
-                helpText.setVisibility(View.GONE);
-                Toast.makeText(
-                        this, "Immagine caricata correttamente", Toast.LENGTH_LONG)
-                        .show();
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Toast.makeText(this, "Immagine non modificata: " + result.getError(), Toast.LENGTH_LONG).show();
-            }
-        }
     }
 
     @Override

@@ -15,7 +15,7 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginStart="24dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#1B1B1B"
             app:cardCornerRadius="25dp"
             app:cardElevation="4dp"
@@ -33,12 +33,12 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/change_btn"
+            android:id="@+id/delete_btn"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginEnd="25dp"
-            android:layout_marginBottom="30dp"
-            android:backgroundTint="#9E87CA"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#E12113"
             app:cardCornerRadius="25dp"
             app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,44 +48,41 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="CAMBIA"
-                android:textColor="@android:color/holo_red_dark"
+                android:text="ELIMINA"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="330dp"
-            android:layout_height="170dp"
+            android:layout_height="190dp"
             android:backgroundTint="?attr/colorBackgroundFloating"
             app:cardCornerRadius="15dp">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#9E87CA" />
+                android:background="#E12113" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="7dp"
+                android:text="Stai per eliminare l'annuncio"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_images" />
+                android:src="@drawable/ic_trash" />
 
         </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="5dp"
-            android:layout_marginTop="8dp"
-            android:text="Stai per modificare l'immagine profilo"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@id/guide2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -94,10 +91,10 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:elevation="5dp"
-            android:text="Premendo il tasto CAMBIA rimuoverai la tua immagine profilo, se non l'hai conservata sul dispositivo, andrà persa \nSei sicuro?"
+            android:text="Premendo il tasto ELIMINA, eliminerai l'annuncio e nessuno potrà più vederlo, l'azione non è reversibile. \nSei sicuro?"
             android:textColor="?attr/colorPrimary"
-            android:textSize="15sp"
-            app:layout_constraintTop_toTopOf="@id/guide3"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/guide1"
             app:layout_constraintBottom_toBottomOf="@id/guide"/>
 
         <androidx.constraintlayout.widget.Guideline
@@ -108,17 +105,10 @@
             app:layout_constraintGuide_percent="0.68" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide3"
+            android:id="@+id/guide1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.87" />
+            app:layout_constraintGuide_percent="0.25" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

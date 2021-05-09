@@ -18,17 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ToggleButton
-            android:id="@+id/save_button_row"
-            android:layout_width="22dp"
-            android:layout_height="20dp"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/toggle_fav_row"
-            android:elevation="4dp"
-            android:textOff=" "
-            android:textOn=" " />
         <Button
             android:id="@+id/buttonItem"
             style="?android:attr/borderlessButtonStyle"
@@ -127,10 +116,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:text="24/03/2021"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp"
             android:textStyle="bold" />
 
