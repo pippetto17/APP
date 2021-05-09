@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_card"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/c_item_soccer"/>
+
+        <Button
+            android:id="@+id/buttonItem"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:backgroundTint="#00FFFFFF"/>
+
+        <TextView
+            android:id="@+id/cittaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:text="Città"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/modalitaTS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom|start"
+            android:text="Modalità:"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/modalitaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="105dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom|start"
+            android:text="singolo"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fasciaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fascia Oraria"
+            android:hint="prova"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="end" />
+
+        <TextView
+            android:id="@+id/giornoT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="24/03/2021"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
