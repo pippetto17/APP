@@ -14,7 +14,7 @@
         android:gravity="center"
         android:text="INFORMAZIONI PERSONALI"
         android:textColor="?attr/colorSecondaryVariant"
-        android:textSize="25sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,64 +26,72 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="Nome"
+        android:text="@string/nome"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/info_personali_text" />
+
     <TextView
         android:id="@+id/mail_u"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="E-Mail"
+        android:text="@string/email"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nome_u" />
+
     <TextView
         android:id="@+id/Eta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Nome"
+        android:text="@string/eta"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mail_u" />
 
-    <!--
     <TextView
-        android:id="@+id/modalita_match"
+        android:id="@+id/match_creati_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="@string/modalit"
-        android:textColor="@color/black"
+        android:text="LISTA MATCH CREATI"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/citta_match" />
+        app:layout_constraintTop_toBottomOf="@id/Eta" />
 
-    <TextView
-        android:id="@+id/giorno_match"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:text="GIORNO"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/modalita_match" />
-     !-->
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/logout"
+        app:layout_constraintTop_toBottomOf="@id/match_creati_text">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/create_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/logout"
@@ -111,8 +119,8 @@
         app:itemBackground="?attr/colorOnSurface"
         app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/app_menu"
-        app:labelVisibilityMode="labeled"/>
+        app:menu="@menu/app_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

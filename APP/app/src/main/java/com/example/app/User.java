@@ -20,11 +20,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import org.w3c.dom.Text;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class User extends AppCompatActivity {
 
     private TextView logout;
+    public TextView nome, email, eta;
     Dialog dialog1;
 
     SharedPreferences sharedPreferences;
@@ -35,6 +38,16 @@ public class User extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_user);
+
+        nome = findViewById(R.id.nome_u);
+        email = findViewById(R.id.mail_u);
+        eta = findViewById(R.id.Eta);
+
+        sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+
+        String emailRecuperata = sharedPreferences.getString("emailLogin", "");
+
+        email.setText(emailRecuperata);
 
         dialog1 = new Dialog(User.this);
         dialog1.setContentView(R.layout.logout_dialog);
