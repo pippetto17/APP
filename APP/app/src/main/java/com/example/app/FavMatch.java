@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +33,7 @@ public class FavMatch extends AppCompatActivity {
     RecyclerView recycle;
     public MyPersonalMatchAdapter matchAdapter;
     ArrayList<MatchModel> list;
+    TextView textNone;
 
     //Array background
     int imagesSport[] = {R.drawable.ic_item_soccer, R.drawable.ic_item_tennis, R.drawable.ic_item_paddle, R.drawable.ic_item_basket};
@@ -53,6 +56,8 @@ public class FavMatch extends AppCompatActivity {
 
         Window window = getWindow();
         window.setBackgroundDrawableResource(R.drawable.search_wallpaper);
+
+        textNone = findViewById(R.id.text_none);
 
         setListStyle();
 
@@ -141,6 +146,8 @@ public class FavMatch extends AppCompatActivity {
         //Controlla se c'è almeno un match salvato
         if(array.length > 0 && !array[0].isEmpty()) {
 
+            textNone.setVisibility(View.GONE);
+
             //Per ogni match recupera i dati
             for (String f:array) {
                 Handler handler = new Handler(Looper.getMainLooper());
@@ -187,7 +194,7 @@ public class FavMatch extends AppCompatActivity {
 
         }
         else{
-            Toast.makeText(this, "Non hai ancora salvato nessun match!", Toast.LENGTH_SHORT).show();
+            textNone.setVisibility(View.VISIBLE);
         }
     }
 

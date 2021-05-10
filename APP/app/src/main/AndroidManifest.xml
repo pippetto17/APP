@@ -37,10 +37,6 @@
             android:label="Sporty"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AdvertS"
-            android:label="Sporty"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".MyappIntro"
             android:label="Sporty"
             android:screenOrientation="portrait"

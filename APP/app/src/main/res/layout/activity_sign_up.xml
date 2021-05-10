@@ -61,7 +61,8 @@
                     android:background="@color/trasparent"
                     android:elevation="2dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/nome_cover"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,7 +87,8 @@
                     android:background="@color/trasparent"
                     android:elevation="2dp"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/cognome_cover"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
