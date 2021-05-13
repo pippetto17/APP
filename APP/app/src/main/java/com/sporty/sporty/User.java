@@ -139,7 +139,7 @@ public class User extends AppCompatActivity {
         });
 
         setListStyle();
-        loadList(arrayMatchPersonali);
+        loadList();
     }
 
     public void setListStyle() {
@@ -151,56 +151,44 @@ public class User extends AppCompatActivity {
         recycle.setAdapter(matchAdapter);
     }
 
-    public void loadList(String[] array) {
+    public void loadList() {
 
+        sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+        String emailRecuperata = sharedPreferences.getString("emailLogin", "");
 
-        //Controlla se c'è almeno un match salvato
-        if (array.length > 0 && !array[0].isEmpty()) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
 
-            textNone.setVisibility(View.GONE);
+                String[] field = new String[1];
+                field[0] = "email";
+                String[] data = new String[1];
+                data[0] = emailRecuperata;
+                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/matchcreatormetodo.php ", "POST", field, data);
 
-            //Per ogni match recupera i dati
-            for (String f : array) {
-                Handler handler = new Handler(Looper.getMainLooper());
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = putData.getResult();
 
-                        String[] field = new String[1];
-                        field[0] = "id_match";
-                        String[] data = new String[1];
-                        data[0] = f;
-                        PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/matchcreatormetodo.php ", "POST", field, data);
+                        CreatorMatchModel[] ArrayMatchRecuperati = SplitCreatorMatch.returnCreatorMatch(result);
 
-                        if (putData.startPut()) {
-                            if (putData.onComplete()) {
-                                String result = putData.getResult();
+                        //Istanziamneto item nella recycleView per ogni match caricato
+                        for (int i = 0; i < ArrayMatchRecuperati.length; i++) {
 
-                                CreatorMatchModel[] ArrayMatchRecuperati = SplitCreatorMatch.returnCreatorMatch(result);
-
-                                //Istanziamneto item nella recycleView per ogni match caricato
-                                for (int i = 0; i < ArrayMatchRecuperati.length; i++) {
-
-                                    CreatorMatchModel Model = new CreatorMatchModel();
-                                    Model.giorno = ArrayMatchRecuperati[i].giorno;
-                                    Model.citta = ArrayMatchRecuperati[i].citta;
-                                    Model.fasciaOraria = ArrayMatchRecuperati[i].fasciaOraria;
-                                    Model.modalita = ArrayMatchRecuperati[i].modalita;
-                                    Model.sport = ArrayMatchRecuperati[i].sport;
-                                    list.add(Model);
-                                }
-                                matchAdapter.notifyDataSetChanged();
-                            }
+                            CreatorMatchModel Model = new CreatorMatchModel();
+                            Model.giorno = ArrayMatchRecuperati[i].giorno;
+                            Model.citta = ArrayMatchRecuperati[i].citta;
+                            Model.fasciaOraria = ArrayMatchRecuperati[i].fasciaOraria;
+                            Model.modalita = ArrayMatchRecuperati[i].modalita;
+                            Model.sport = ArrayMatchRecuperati[i].sport;
+                            list.add(Model);
                         }
+                        matchAdapter.notifyDataSetChanged();
                     }
-                });
-
+                }
             }
-
-
-        } else {
-            textNone.setVisibility(View.VISIBLE);
-        }
+        });
     }
 
     private void userLogOut() {
