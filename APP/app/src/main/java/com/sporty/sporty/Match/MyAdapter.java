@@ -3,6 +3,7 @@ package com.sporty.sporty.Match;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Handler;
@@ -18,7 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.sporty.sporty.FavMatch;
 import com.sporty.sporty.R;
+import com.sporty.sporty.Search;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.util.ArrayList;
@@ -128,7 +131,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Ball = dialog.findViewById(R.id.ballO);
         SaveButton = dialog.findViewById(R.id.save_button);
 
-
         Nome.setText(nome);
         Eta.setText(eta);
         Giorno.setText(giorno);
@@ -137,25 +139,71 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Citta.setText(citta);
         Info.setText(info);
 
-        SaveButton.setOnClickListener(v -> {
 
-            //Recupero id match
-            String idMatchRecuperato = idMatch;
-            idMatchRecuperato += "$";
+        //Recupero email
+        sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+        String emailRecuperata = sharedPreferences.getString("emailLogin", "");
 
-            SaveButton.setChecked(true);
+        /**
+         * Recupera i match salvati, se già salvato riempie il bottone, se NON lo fa salvare
+         */
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
 
-            //Recupero email
-            sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
-            String emailRecuperata = sharedPreferences.getString("emailLogin", "");
+                String[] field = new String[1];
+                field[0] = "email";
+                String[] data = new String[1];
+                data[0] = emailRecuperata;
+                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/salvametodo.php ", "POST", field, data);
 
-            saveMatch(idMatchRecuperato, emailRecuperata);
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+                        String result = putData.getResult();
 
+                        //Array con gli ID dei match salvati
+                        String[] arrayIDMatchSalvati = SplitSavedMatch.returnSavedMatches(result);
+
+                        if (checkDuplicatedFavMatch(arrayIDMatchSalvati, idMatch)) {
+
+                            //Annuncio già salvato e riempiemento del bottone
+                            SaveButton.setChecked(true);
+
+                        }
+
+
+                        if(!SaveButton.isChecked()) {
+
+                            //Salvataggio dell'annuncio
+                            SaveButton.setOnClickListener(v -> {
+
+                                //Recupero id match
+                                String idMatchRecuperato = idMatch;
+                                idMatchRecuperato += "$";
+                                SaveButton.setChecked(true);
+                                saveMatch(idMatchRecuperato, emailRecuperata);
+                            });
+                        }
+                        else if(SaveButton.isChecked()){
+
+                            //Salvataggio dell'annuncio
+                            SaveButton.setOnClickListener(v -> {
+
+                                removeFavouriteMatch(idMatch);
+                            });
+
+
+                        }
+
+
+                    }
+                }
+            }
         });
 
         dialog.getWindow().setLayout(DeviceTotalWidth, DeviceTotalHeight);
         dialog.show();
-
         ImageView back_button = dialog.findViewById(R.id.back_button);
 
         back_button.setOnClickListener(v -> {
@@ -215,6 +263,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
+
+    /**
+     * Salva il match nel database, viene passato l'id del match da salvare e la mail dell'utente stesso
+     *
+     * @param idMatchP
+     * @param emailP
+     */
     public void saveMatch(String idMatchP, String emailP) {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
@@ -234,6 +289,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
                         String result = putData.getResult();
+
                         if (result.equals("Annuncio salvato")) {
                             Toast.makeText(ctx, result, Toast.LENGTH_SHORT).show();
                         } else {
@@ -243,5 +299,99 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 }
             }
         });
+    }
+
+    /**
+     * Controlla se il match è stato già salvato
+     * Viene passato l'array dei match già salvati e l'annuncio che si vuole salvare
+     * Restituisce false se non è stato già salvato
+     *
+     * @param array
+     * @param element
+     * @return
+     */
+    public Boolean checkDuplicatedFavMatch(String[] array, String element) {
+
+        for (String cuurent : array) {
+
+            if (cuurent.equals(element)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Rimuove l'id del match indicato dalla lista dei favoriti
+     * Viene passato come parametro l'id del match da rimuovere
+     *
+     * @param idMatch
+     */
+    public void removeFavouriteMatch(String idMatch) {
+
+        //Recupero email dalle shared preferences
+        sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
+        String emailRecuperata = sharedPreferences.getString("emailLogin", "");
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+
+                String[] field = new String[1];
+                field[0] = "email";
+                String[] data = new String[1];
+                data[0] = emailRecuperata;
+                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/salvametodo.php ", "POST", field, data);
+
+                if (putData.startPut()) {
+                    if (putData.onComplete()) {
+
+                        //Stringa dei match salvati
+                        String result = putData.getResult();
+
+                        //Nuova stringa dei match salvati senza il match appena rimosso
+                        String idMatchDeleted = removeFavMatch.returnNewSavedMatch(result, idMatch);
+
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                String[] field = new String[2];
+                                field[0] = "string";
+                                field[1] = "email";
+
+
+                                String[] data = new String[2];
+                                data[0] = idMatchDeleted;
+                                data[1] = emailRecuperata;
+                                PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/modsalvatimetodo.php", "POST", field, data);
+
+                                if (putData.startPut()) {
+                                    if (putData.onComplete()) {
+                                        String result = putData.getResult();
+                                        if (result.equals("Salvati aggiornati")) {
+                                            Toast.makeText(ctx, result, Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(ctx, result, Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+                            }
+
+                        });
+
+
+                    }
+                }
+            }
+        });
+
+        //Reload Fav list
+        Intent intent = new Intent(ctx, Search.class);
+        ctx.finish();
+        ctx.startActivity(intent);
     }
 }
