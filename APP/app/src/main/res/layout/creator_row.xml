@@ -10,27 +10,28 @@
         android:id="@+id/item_card"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        app:cardCornerRadius="12dp"
         android:layout_marginBottom="15dp"
+        app:cardCornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/bg_creator_match"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/c_item_soccer"/>
+            android:src="@drawable/c_item_soccer" />
 
         <Button
             android:id="@+id/buttonItem"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="350dp"
             android:layout_height="120dp"
-            android:backgroundTint="#00FFFFFF"/>
+            android:backgroundTint="#00FFFFFF" />
 
         <TextView
-            android:id="@+id/cittaT"
+            android:id="@+id/cittaC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -43,38 +44,38 @@
             android:id="@+id/modalitaTS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_gravity="bottom|start"
             android:text="Modalità:"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/modalitaT"
+            android:id="@+id/modalitaC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
             android:layout_marginStart="105dp"
             android:layout_marginBottom="10dp"
-            android:layout_gravity="bottom|start"
             android:text="singolo"
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/fasciaT"
+            android:id="@+id/fasciaC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fascia Oraria"
-            android:hint="prova"
-            android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="20sp"
-            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
             android:layout_marginTop="20dp"
-            android:layout_gravity="end" />
+            android:layout_marginEnd="10dp"
+            android:hint="prova"
+            android:text="Fascia Oraria"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/giornoT"
+            android:id="@+id/giornoC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

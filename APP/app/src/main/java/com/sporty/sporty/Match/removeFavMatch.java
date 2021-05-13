@@ -1,4 +1,4 @@
-package com.example.app.Match;
+package com.sporty.sporty.Match;
 
 public interface removeFavMatch {
 
@@ -8,14 +8,14 @@ public interface removeFavMatch {
         String newFavouriteMatch = oldFavouriteMatch;
 
         //Toglie il primo elemento della stringa "$"
-        StringBuffer sb= new StringBuffer(oldFavouriteMatch);
+        StringBuffer sb = new StringBuffer(oldFavouriteMatch);
         sb.deleteCharAt(0);
         newFavouriteMatch = new String(sb);
 
         //Rimuove l'id del match passato come parametro
         String deleteSubString = IdMatch;
         deleteSubString = deleteSubString + "$";
-        newFavouriteMatch  = oldFavouriteMatch.replace(deleteSubString, "");
+        newFavouriteMatch = oldFavouriteMatch.replace(deleteSubString, "");
 
         return newFavouriteMatch;
     }

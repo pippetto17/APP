@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import com.github.appintro.AppIntro2;
 import com.github.appintro.AppIntroFragment;
 import com.github.appintro.AppIntroPageTransformerType;
-import com.github.appintro.SlidePolicy;
 
 public class MyappIntro extends AppIntro2 {
 
@@ -23,7 +22,7 @@ public class MyappIntro extends AppIntro2 {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Slide1 fragment1 = new Slide1 ();
+        Slide1 fragment1 = new Slide1();
 
         sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -32,13 +31,12 @@ public class MyappIntro extends AppIntro2 {
 
         if (showIntro.isEmpty()) {
             addSlide(fragment1);
-            addSlide(AppIntroFragment.newInstance("Pagina 2", "pagina due dove si vede la registrazione", R.drawable.signup, ContextCompat.getColor(getApplicationContext(),R.color.green_500)));
-            addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.def_wallpaper, ContextCompat.getColor(getApplicationContext(),R.color.purple_700)));
+            addSlide(AppIntroFragment.newInstance("Pagina 2", "pagina due dove si vede la registrazione", R.drawable.signup, ContextCompat.getColor(getApplicationContext(), R.color.green_500)));
+            addSlide(AppIntroFragment.newInstance("Pagina 3", "pagina tre dove si vede un match", R.drawable.def_wallpaper, ContextCompat.getColor(getApplicationContext(), R.color.purple_700)));
 
             // Fade Transition
             setTransformer(AppIntroPageTransformerType.Fade.INSTANCE);
-        }
-        else{
+        } else {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }

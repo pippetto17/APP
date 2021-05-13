@@ -1,4 +1,4 @@
-package com.example.app.Match;
+package com.sporty.sporty.Match;
 
 public class MatchModel {
 
@@ -14,7 +14,8 @@ public class MatchModel {
     public String kindSport;
 
 
-    public MatchModel(){}
+    public MatchModel() {
+    }
 
     public MatchModel(String nomeCognomeCreatore, String giorno, String fasciaOraria, String citta, String modalita, String emailCreatore, String info, String eta, String idMatch, String kindSport) {
         this.nomeCognomeCreatore = nomeCognomeCreatore;

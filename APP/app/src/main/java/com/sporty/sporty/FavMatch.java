@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,18 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.app.Match.MatchModel;
-import com.example.app.Match.MyAdapter;
-import com.example.app.Match.MyPersonalMatchAdapter;
-import com.example.app.Match.SplitData;
-import com.example.app.Match.SplitSavedMatch;
+import com.sporty.sporty.Match.MatchModel;
+import com.sporty.sporty.Match.MyPersonalMatchAdapter;
+import com.sporty.sporty.Match.SplitData;
+import com.sporty.sporty.Match.SplitSavedMatch;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
@@ -35,9 +33,6 @@ public class FavMatch extends AppCompatActivity {
     ArrayList<MatchModel> list;
     TextView textNone;
 
-    //Array background
-    int imagesSport[] = {R.drawable.ic_item_soccer, R.drawable.ic_item_tennis, R.drawable.ic_item_paddle, R.drawable.ic_item_basket};
-
     //URL basico per la SELECT
     final String urlServer = "http://93.43.208.27/carletti/sportydb/";
 
@@ -46,7 +41,6 @@ public class FavMatch extends AppCompatActivity {
 
     String[] arrayIDMatchSalvati;
     int x = 0;
-
 
 
     @Override
@@ -96,7 +90,7 @@ public class FavMatch extends AppCompatActivity {
 
     }
 
-    public void setListStyle(){
+    public void setListStyle() {
         recycle = findViewById(R.id.fav_recycle);
         recycle.setHasFixedSize(true);
         recycle.setLayoutManager(new LinearLayoutManager(this));
@@ -108,7 +102,7 @@ public class FavMatch extends AppCompatActivity {
     /**
      * Recupera la lista dei match salvati dell'utente connesso e li carica nella recycleview
      */
-    public void requestFavourites () {
+    public void requestFavourites() {
 
         //Recupero email dalle shared preferences
         sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
@@ -144,12 +138,12 @@ public class FavMatch extends AppCompatActivity {
 
 
         //Controlla se c'è almeno un match salvato
-        if(array.length > 0 && !array[0].isEmpty()) {
+        if (array.length > 0 && !array[0].isEmpty()) {
 
             textNone.setVisibility(View.GONE);
 
             //Per ogni match recupera i dati
-            for (String f:array) {
+            for (String f : array) {
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(new Runnable() {
                     @Override
@@ -192,12 +186,10 @@ public class FavMatch extends AppCompatActivity {
             }
 
 
-        }
-        else{
+        } else {
             textNone.setVisibility(View.VISIBLE);
         }
     }
-
 
 
     @Override

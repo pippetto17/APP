@@ -32,11 +32,11 @@
             android:id="@+id/show_dialog"
             android:layout_width="190dp"
             android:layout_height="50dp"
-            android:textSize="15sp"
             android:layout_marginTop="40dp"
-            app:cardElevation="4dp"
+            android:textSize="15sp"
             app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="25dp"
+            app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,11 +60,11 @@
             android:id="@+id/create_match_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
             android:backgroundTint="?attr/colorOnPrimarySurface"
             app:cardCornerRadius="20dp"
             app:contentPaddingBottom="40dp"
             app:contentPaddingTop="40dp"
-            android:layout_marginTop="65dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/create_title">
@@ -73,10 +73,10 @@
                 android:id="@+id/date_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:elevation="2dp"
                 android:hint="@string/data"
-                android:layout_gravity="center_horizontal"
                 android:textColor="?attr/colorSecondaryVariant"
                 android:textColorHint="?attr/colorSecondaryVariant"
                 android:textStyle="bold" />
@@ -85,8 +85,8 @@
                 android:id="@+id/fascia_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
                 android:elevation="3dp"
                 android:text="@string/fascia_oraria"
                 android:textColor="?attr/colorSecondaryVariant"
@@ -96,78 +96,78 @@
                 android:id="@+id/fascia_oraria"
                 android:layout_width="260dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="90dp"
-                android:background="@drawable/box_text"
+                android:background="@drawable/spinner_box"
                 android:elevation="2dp"
                 android:ems="10"
-                android:popupBackground="@drawable/rounded_corner"
-                android:layout_gravity="center_horizontal"/>
+                android:popupBackground="@drawable/rounded_corner" />
 
             <TextView
                 android:id="@+id/mod_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="160dp"
                 android:elevation="3dp"
                 android:text="@string/modalit"
                 android:textColor="?attr/colorSecondaryVariant"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal" />
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/modalita"
                 android:layout_width="260dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="185dp"
-                android:background="@drawable/box_text"
+                android:background="@drawable/spinner_box"
                 android:elevation="2dp"
                 android:ems="10"
-                android:popupBackground="@drawable/rounded_corner"
-                android:layout_gravity="center_horizontal"/>
+                android:popupBackground="@drawable/rounded_corner" />
 
             <TextView
                 android:id="@+id/city_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="250dp"
                 android:elevation="3dp"
                 android:text="@string/città"
                 android:textColor="?attr/colorSecondaryVariant"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/city_field"
                 android:layout_width="260dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="275dp"
                 android:background="@drawable/box_text"
                 android:elevation="2dp"
                 android:ems="10"
                 android:hint="@string/citta2"
                 android:inputType="textMultiLine"
-                android:lines="5"
                 android:padding="10dp"
-                android:textColorHint="?attr/colorSecondaryVariant"
                 android:textColor="?attr/colorSecondaryVariant"
-                android:textSize="20sp"
-                android:layout_gravity="center_horizontal" />
+                android:textColorHint="#939393"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/info_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:elevation="2dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="345dp"
+                android:elevation="2dp"
                 android:text="INFORMAZIONI AGGIUNTIVE"
                 android:textColor="?attr/colorSecondaryVariant"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/info_box"
                 android:layout_width="260dp"
                 android:layout_height="140dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="385dp"
                 android:background="@drawable/box_text"
                 android:elevation="2dp"
@@ -178,9 +178,8 @@
                 android:lines="5"
                 android:padding="10dp"
                 android:textColor="?attr/colorSecondaryVariant"
-                android:textColorHint="?attr/colorSecondaryVariant"
-                android:textSize="20sp"
-                android:layout_gravity="center_horizontal"/>
+                android:textColorHint="#939393"
+                android:textSize="20sp" />
 
         </androidx.cardview.widget.CardView>
 
@@ -192,9 +191,9 @@
             android:textSize="14sp"
             app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="28dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"

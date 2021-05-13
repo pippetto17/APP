@@ -1,4 +1,4 @@
-package com.example.app.Match;
+package com.sporty.sporty.Match;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.example.app.R;
+import com.sporty.sporty.R;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.matchList = pList;
         this.context = pContext;
         this.choosedSport = pChoosedSport;
-        this.ctx=activity;
+        this.ctx = activity;
     }
 
 
@@ -100,7 +100,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
 
 
-
         holder.buttonitem.setOnClickListener(v -> {
             openItem(matchListModel.nomeCognomeCreatore, matchListModel.eta, matchListModel.giorno, matchListModel.modalita, matchListModel.fasciaOraria, matchListModel.citta, matchListModel.info, matchListModel.idMatch);
         });
@@ -117,17 +116,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.open_adv);
 
-        Nome=dialog.findViewById(R.id.nomeCognomeO);
-        Eta=dialog.findViewById(R.id.etaO);
-        Giorno=dialog.findViewById(R.id.giornoO);
-        Modalita=dialog.findViewById(R.id.modalitaO);
-        Fascia=dialog.findViewById(R.id.fasciaO);
-        Citta=dialog.findViewById(R.id.cittaO);
-        Info=dialog.findViewById(R.id.infoO);
-        Banner=dialog.findViewById(R.id.banner);
-        Player=dialog.findViewById(R.id.playerO);
-        Ball=dialog.findViewById(R.id.ballO);
-        SaveButton=dialog.findViewById(R.id.save_button);
+        Nome = dialog.findViewById(R.id.nomeCognomeO);
+        Eta = dialog.findViewById(R.id.etaO);
+        Giorno = dialog.findViewById(R.id.giornoO);
+        Modalita = dialog.findViewById(R.id.modalitaO);
+        Fascia = dialog.findViewById(R.id.fasciaO);
+        Citta = dialog.findViewById(R.id.cittaO);
+        Info = dialog.findViewById(R.id.infoO);
+        Banner = dialog.findViewById(R.id.banner);
+        Player = dialog.findViewById(R.id.playerO);
+        Ball = dialog.findViewById(R.id.ballO);
+        SaveButton = dialog.findViewById(R.id.save_button);
 
 
         Nome.setText(nome);
@@ -142,7 +141,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             //Recupero id match
             String idMatchRecuperato = idMatch;
-            idMatchRecuperato +="$";
+            idMatchRecuperato += "$";
 
             SaveButton.setChecked(true);
 
@@ -154,7 +153,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         });
 
-        dialog.getWindow().setLayout(DeviceTotalWidth ,DeviceTotalHeight);
+        dialog.getWindow().setLayout(DeviceTotalWidth, DeviceTotalHeight);
         dialog.show();
 
         ImageView back_button = dialog.findViewById(R.id.back_button);
@@ -210,13 +209,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             modalita = itemView.findViewById(R.id.modalitaT);
             nomeCognome = itemView.findViewById(R.id.nomeCognomeT);
             bgItem = itemView.findViewById(R.id.backgroundItem);
-            buttonitem=itemView.findViewById(R.id.buttonItem);
+            buttonitem = itemView.findViewById(R.id.buttonItem);
 
 
         }
     }
 
-    public void saveMatch(String idMatchP, String emailP){
+    public void saveMatch(String idMatchP, String emailP) {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
             @Override

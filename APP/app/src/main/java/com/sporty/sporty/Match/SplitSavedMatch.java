@@ -1,17 +1,18 @@
-package com.example.app.Match;
+package com.sporty.sporty.Match;
 
 public interface SplitSavedMatch {
 
     /**
      * Prende la stringa dal database, elimina il primo carattere $ e splitta tutti i macth
      * dividendoli per il simbolo $
+     *
      * @param stringFromDatabase
      * @return
      */
-    public static String[] returnSavedMatches (String stringFromDatabase) {
+    public static String[] returnSavedMatches(String stringFromDatabase) {
 
         //Divide i match con il target $
-        StringBuffer sb= new StringBuffer(stringFromDatabase);
+        StringBuffer sb = new StringBuffer(stringFromDatabase);
         sb.deleteCharAt(0);
 
         String[] arrayMatches = sb.toString().split("\\$");

@@ -1,4 +1,4 @@
-package com.example.app.Match;
+package com.sporty.sporty.Match;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -20,12 +20,11 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
-import com.example.app.FavMatch;
-import com.example.app.Login;
-import com.example.app.R;
+import com.sporty.sporty.FavMatch;
+import com.sporty.sporty.R;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class MyPersonalMatchAdapter extends MyAdapter{
+public class MyPersonalMatchAdapter extends MyAdapter {
 
     public MyPersonalMatchAdapter(Context pContext, ArrayList<MatchModel> pList, String pChoosedSport, Activity activity) {
         super(pContext, pList, pChoosedSport, activity);
@@ -72,9 +71,10 @@ public class MyPersonalMatchAdapter extends MyAdapter{
     /**
      * Rimuove l'id del match indicato dalla lista dei favoriti
      * Viene passato come parametro l'id del match da rimuovere
+     *
      * @param idMatch
      */
-    public void removeFavouriteMatch (String idMatch) {
+    public void removeFavouriteMatch(String idMatch) {
 
         //Recupero email dalle shared preferences
         sharedPreferences = ctx.getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
@@ -143,6 +143,7 @@ public class MyPersonalMatchAdapter extends MyAdapter{
 
     /**
      * Carica l'annuncio aperto ma non da la possibilita di salvare l'annuncio
+     *
      * @param nome
      * @param eta
      * @param giorno
@@ -163,16 +164,16 @@ public class MyPersonalMatchAdapter extends MyAdapter{
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.open_adv_fav);
 
-        Nome=dialog.findViewById(R.id.nomeCognomeO);
-        Eta=dialog.findViewById(R.id.etaO);
-        Giorno=dialog.findViewById(R.id.giornoO);
-        Modalita=dialog.findViewById(R.id.modalitaO);
-        Fascia=dialog.findViewById(R.id.fasciaO);
-        Citta=dialog.findViewById(R.id.cittaO);
-        Info=dialog.findViewById(R.id.infoO);
-        Banner=dialog.findViewById(R.id.banner);
-        Player=dialog.findViewById(R.id.playerO);
-        Ball=dialog.findViewById(R.id.ballO);
+        Nome = dialog.findViewById(R.id.nomeCognomeO);
+        Eta = dialog.findViewById(R.id.etaO);
+        Giorno = dialog.findViewById(R.id.giornoO);
+        Modalita = dialog.findViewById(R.id.modalitaO);
+        Fascia = dialog.findViewById(R.id.fasciaO);
+        Citta = dialog.findViewById(R.id.cittaO);
+        Info = dialog.findViewById(R.id.infoO);
+        Banner = dialog.findViewById(R.id.banner);
+        Player = dialog.findViewById(R.id.playerO);
+        Ball = dialog.findViewById(R.id.ballO);
 
 
         Nome.setText(nome);
@@ -183,7 +184,7 @@ public class MyPersonalMatchAdapter extends MyAdapter{
         Citta.setText(citta);
         Info.setText(info);
 
-        dialog.getWindow().setLayout(DeviceTotalWidth ,DeviceTotalHeight);
+        dialog.getWindow().setLayout(DeviceTotalWidth, DeviceTotalHeight);
         dialog.show();
 
         ImageView back_button = dialog.findViewById(R.id.back_button);

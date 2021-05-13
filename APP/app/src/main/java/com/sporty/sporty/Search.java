@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +14,9 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.app.Match.MatchModel;
-import com.example.app.Match.MyAdapter;
-import com.example.app.Match.SplitData;
+import com.sporty.sporty.Match.MatchModel;
+import com.sporty.sporty.Match.MyAdapter;
+import com.sporty.sporty.Match.SplitData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vishnusivadas.advanced_httpurlconnection.FetchData;
 

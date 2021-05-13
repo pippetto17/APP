@@ -87,15 +87,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="5dp"
             android:elevation="5dp"
-            android:layout_marginTop="50dp"
+            android:gravity="center"
             android:text="Premendo il tasto LOGOUT uscirai dal tuo account e sarai reindirizzato alla pagina di Login \nSei sicuro?"
             android:textColor="?attr/colorPrimary"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@id/guide"/>
+            app:layout_constraintBottom_toBottomOf="@id/guide" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide"

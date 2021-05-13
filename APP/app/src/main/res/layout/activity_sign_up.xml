@@ -8,9 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/signupTitle"
@@ -22,179 +20,24 @@
             android:textColor="?attr/colorSecondaryVariant"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="@id/guide2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="@id/guide2" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/reg_container"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             android:backgroundTint="?attr/colorOnPrimarySurface"
             app:cardCornerRadius="20dp"
             app:contentPaddingBottom="10dp"
             app:contentPaddingTop="10dp"
             app:layout_constraintBottom_toBottomOf="@id/guide1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guide10"
+            app:layout_constraintStart_toStartOf="@id/guide9"
             app:layout_constraintTop_toTopOf="@id/guide"
             app:layout_constraintVertical_bias="1.0">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome_cover"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/nome"
-                android:textColorHint="?attr/colorSecondaryVariant">
-
-                <EditText
-                    android:id="@+id/nome"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:elevation="2dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:labelFor="@id/nome_cover"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cognome_cover"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="130dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/cognome"
-                android:textColorHint="?attr/colorSecondaryVariant">
-
-                <EditText
-                    android:id="@+id/cognome"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:elevation="2dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:labelFor="@id/cognome_cover"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email_cover"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="210dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/email"
-                android:textColorHint="?attr/colorSecondaryVariant">
-
-                <EditText
-                    android:id="@+id/emailReg"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:elevation="2dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/eta_cover"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="290dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/eta"
-                android:textColorHint="?attr/colorSecondaryVariant">
-
-                <EditText
-                    android:id="@+id/eta"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:elevation="2dp"
-                    android:ems="10"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password_cover_reg"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="420dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/password"
-                android:inputType="textPersonName"
-                android:textColor="?attr/colorSecondaryVariant"
-                android:textColorHint="?attr/colorSecondaryVariant"
-                app:counterEnabled="false"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/passwordReg"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:ems="10"
-                    android:inputType="textPassword" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password_confirm_cover"
-                android:layout_width="270dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="505dp"
-                android:background="@drawable/box_text"
-                android:elevation="2dp"
-                android:ems="10"
-                android:hint="@string/conferma_password"
-                android:textColorHint="?attr/colorSecondaryVariant"
-                app:counterEnabled="false"
-                app:passwordToggleEnabled="true">
-
-                <EditText
-                    android:id="@+id/confermaPasswordRegistration"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:background="@color/trasparent"
-                    android:ems="10"
-                    android:inputType="textPassword" />
-
-            </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.Guideline
@@ -217,6 +60,261 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.91" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.84" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.57" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.47" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.27" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.17" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.83" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nome_cover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/nome"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:layout_constraintBottom_toBottomOf="@id/guide8"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:startIconDrawable="@drawable/ic_user_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:labelFor="@id/nome_cover" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cognome_cover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/cognome"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:layout_constraintBottom_toBottomOf="@id/guide7"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:startIconDrawable="@drawable/ic_user_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/cognome"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:labelFor="@id/cognome_cover" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_cover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="210dp"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:layout_constraintBottom_toBottomOf="@id/guide6"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:startIconDrawable="@drawable/ic_email_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/emailReg"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eta_cover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="290dp"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/eta"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:layout_constraintBottom_toBottomOf="@id/guide5"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:startIconDrawable="@drawable/ic_eta_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/eta"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:elevation="2dp"
+                android:ems="10"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_cover_reg"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="420dp"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPersonName"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:counterEnabled="false"
+            app:layout_constraintBottom_toBottomOf="@id/guide4"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_password_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/passwordReg"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_confirm_cover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/box_text"
+            android:elevation="2dp"
+            android:ems="10"
+            android:hint="@string/conferma_password"
+            android:textColorHint="?attr/colorSecondaryVariant"
+            app:counterEnabled="false"
+            app:layout_constraintBottom_toBottomOf="@id/guide3"
+            app:layout_constraintEnd_toEndOf="@id/guide12"
+            app:layout_constraintStart_toStartOf="@id/guide11"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_password_drawable"
+            app:startIconTint="?attr/colorSecondaryVariant">
+
+            <EditText
+                android:id="@+id/confermaPasswordRegistration"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:background="@color/trasparent"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView

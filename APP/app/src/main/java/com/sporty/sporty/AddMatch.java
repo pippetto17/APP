@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

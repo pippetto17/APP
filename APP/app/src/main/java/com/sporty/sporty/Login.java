@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -18,7 +17,7 @@ import android.widget.Toast;
 
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class  Login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
 
     EditText EditTextEmail, EditTextPassword;
@@ -65,7 +64,7 @@ public class  Login extends AppCompatActivity {
 
 
     //Effettua il login e scrive le shared preferences
-    public void userLogin(String email, String password){
+    public void userLogin(String email, String password) {
 
         if (!email.isEmpty() && !password.isEmpty()) {
             Handler handler = new Handler(Looper.getMainLooper());
@@ -86,7 +85,7 @@ public class  Login extends AppCompatActivity {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
                             if (result.equals("Login riuscito")) {
-                                Toast.makeText(Login.this, result , Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, result, Toast.LENGTH_SHORT).show();
 
 
                                 //Scrive le shared prefrences
@@ -96,7 +95,7 @@ public class  Login extends AppCompatActivity {
                                 editor.putString("passwordLogin", password);
                                 editor.commit();
 
-                                Intent intent = new Intent (Login.this, Search.class);
+                                Intent intent = new Intent(Login.this, Search.class);
                                 startActivity(intent);
 
                             } else {

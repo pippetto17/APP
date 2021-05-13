@@ -1,4 +1,4 @@
-package com.example.app;
+package com.sporty.sporty;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Layout;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -133,7 +131,7 @@ public class MatchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String citta, modalita,fascia_oraria, info_box;
+                String citta, modalita, fascia_oraria, info_box;
 
 
                 fascia_oraria = Ora.getSelectedItem().toString().trim();
@@ -146,52 +144,78 @@ public class MatchActivity extends AppCompatActivity {
                 sharedPreferences = getSharedPreferences("MySharedPreferences", Context.MODE_PRIVATE);
                 String email = sharedPreferences.getString("emailLogin", "");
 
+                if (choosedSport.isEmpty()) {
+                    return;
+                }
 
+                if (citta.isEmpty()) {
+                    EditCity.setError("Questo campo è obbliatorio");
+                    EditCity.requestFocus();
+                    return;
+                }
 
+                if (fascia_oraria.isEmpty()) {
+                    return;
+                }
 
-                if (!choosedSport.isEmpty() && !citta.isEmpty() && !fascia_oraria.isEmpty() && !modalita.isEmpty() && !info_box.isEmpty() && !email.isEmpty() && !giorno.isEmpty()) {
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
+                if (modalita.isEmpty()) {
+                    return;
+                }
 
-                            String[] field = new String[7];
-                            field[0] = "giorno";
-                            field[1] = "fascia_oraria";
-                            field[2] = "citta";
-                            field[3] = "modalita";
-                            field[4] = "email_match";
-                            field[5] = "info";
-                            field[6] = "sport";
+                if (info_box.isEmpty()) {
+                    EditInfo.setError("Questo campo è obbliatorio");
+                    EditInfo.requestFocus();
+                    return;
+                }
 
-                            String[] data = new String[7];
-                            data[0] = giorno;
-                            data[1] = fascia_oraria;
-                            data[2] = citta;
-                            data[3] = modalita;
-                            data[4] = email;
-                            data[5] = info_box;
-                            data[6] = choosedSport;
-                            PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/createMatch.php", "POST", field, data);
+                if (email.isEmpty()) {
+                    return;
+                }
 
-                            if (putData.startPut()) {
-                                if (putData.onComplete()) {
-                                    String result = putData.getResult();
-                                    if (result.equals("Annuncio creato")) {
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), Search.class);
-                                        startActivity(intent);
-                                        finish();
-                                    } else {
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                    }
+                if (giorno == null) {
+                    Toast.makeText(getApplicationContext(), "Inserire la data", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        String[] field = new String[7];
+                        field[0] = "giorno";
+                        field[1] = "fascia_oraria";
+                        field[2] = "citta";
+                        field[3] = "modalita";
+                        field[4] = "email_match";
+                        field[5] = "info";
+                        field[6] = "sport";
+
+                        String[] data = new String[7];
+                        data[0] = giorno;
+                        data[1] = fascia_oraria;
+                        data[2] = citta;
+                        data[3] = modalita;
+                        data[4] = email;
+                        data[5] = info_box;
+                        data[6] = choosedSport;
+                        PutData putData = new PutData("http://93.43.208.27/carletti/sportydb/createMatch.php", "POST", field, data);
+
+                        if (putData.startPut()) {
+                            if (putData.onComplete()) {
+                                String result = putData.getResult();
+                                if (result.equals("Annuncio creato")) {
+                                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), Search.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
-                    });
-                } else {
-                    Toast.makeText(getApplicationContext(), "Sono richiesti tutti i campi", Toast.LENGTH_SHORT).show();
-                }
+                    }
+                });
             }
         });
     }
